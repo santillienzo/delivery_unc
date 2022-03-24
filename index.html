@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cortez</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
+        "
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="./public/css/styles.css" />
+    <!-- Estilos del carrito -->
+    <link rel="stylesheet" href="./public/css/carrito.css">
+    <!-- Estilos del nav -->
+    <link rel="stylesheet" href="./public/css/nav.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="form-titulo">
+        <nav class="nav-main">
+          <img src="./public/img/logo.jpg" alt="milogo" class="nav-brand" />
+          <!-- Right Nav -->
+          <ul class="nav-main-busqueda">
+            <li>
+              <form action="/search" method="GET" class="header__form">
+                <select name="select">
+                  <option value="value1" selected>Todo</option>
+                  <option value="value2">Hamburguesas</option>
+                  <option value="value3">Pizzas</option>
+                </select>
+                
+                <input
+                  type="text"
+                  name="search"
+                  class="input__search"
+                  placeholder="Buscar productos"
+                />
+
+                <button type="submit" class="header__lupa">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </li>
+          </ul>
+          <ul class="nav-main-iconos">
+            <li>
+              <a href="registerAdd.html"><i class="fas fa-user-circle"></i> </a>
+            </li>
+            <li>
+              <span href="/carrito.html" class="carrito_nav" id="carrito_icon"><i class="fas fa-shopping-cart"></i></span>
+            </li>
+            <li>
+              <a href="registerAdd.html"><i class="fas fa-heart"></i> </a>
+            </li>
+          </ul>
+          <!-- ACA SE INYECTA DINAMICAMENTE carro -->
+          <div class="carrito__container" id="carrito__container">
+            <table class="table-carrito table-dark table-hover">
+              <caption>Mi carrito</caption>
+              <thead>
+                <tr class="text-primary">
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="tbody" id="tbody">
+              </tbody>
+            </table>
+            <div class="total_container">
+              <div class="col">
+                <h3 class="itemCartTotal text-white">Total: $0</h3>
+              </div>
+              <div class="col d-flex justify-content-end">
+                <button class="btn-comprar">COMPRAR</button>
+              </div>
+            </div>
+          </div>
+          <!-- fin carro -->
+        </nav>
+
+      </header>
+      
+      <main>
+        <!-- NEWS CARDS -->
+        <h2 class="visitados">Hamburguesas</h2>
+
+        <section class="news-cards" id="seccionHamb">
+            
+        <!-- ACA SE INYECTA DINAMICAMENTE DEL ARRAY -->
+
+        </section>
+
+        <hr>
+        <h2 class="visitados">Pizzas</h2>
+        <section class="news-cards" id="seccionPizza">
+          
+          <!-- ACA SE INYECTA DINAMICAMENTE DEL ARRAY -->
+
+        </section>
+      </main>
+    </div>
+
+  <footer class="main-footer">
+    <div class="container">
+      <section class="section-footer">
+        <article class="footer-data">
+          <i class="fas fa-credit-card"></i>
+          <h2>Pagá con tarjeta o en efectivo</h2>
+          <p>
+            Acá pongo zaraza
+          </p>
+        </article>
+
+        <article class="footer-data">
+          <i class="fas fa-gift"></i>
+          <h2>Envío gratis desde $ 1.999</h2>
+          <p>
+              Acá pongo zaraza.
+          </p>
+        </article>
+
+        <article class="footer-data">
+          <i class="fas fa-user-shield"></i>
+          <h2>Seguridad, de principio a fin</h2>
+          <p>
+              Acá pongo zaraza
+          </p>
+        </article>
+      </section>
+    </div>
+  </footer>
+  <div class="sub-footer">
+    <div class="container">
+      <p>Copyright © 2022 Cortez GOozalo</p>
+    </div>
+  </div>
+  <script type="module" src="./public/js/main.js"></script>
+  <script type="module" src="./public/js/cart.js"></script>
+  </body>
+</html>

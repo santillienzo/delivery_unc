@@ -1,0 +1,7 @@
+INDEX.HTML
+seccionVentas x seccionHamb
+seccionAlquiler x seccionPizza
+
+MAIN.JS
+articuloVentas x seccionHamburguesa
+articuloPizza x seccionPizza
