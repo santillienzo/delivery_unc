@@ -24,8 +24,9 @@
     cursor: pointer;
 }
 
-.carrito_nav::before{
+.carrito_contador{
     position: absolute;
+    z-index: 2;
     content: '2';
     display: flex;
     align-items: center;
@@ -69,4 +70,5 @@
 
 .nav-main-iconos li{
     margin-left: 15px;
+    position: relative;
 }
