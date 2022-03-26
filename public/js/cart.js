@@ -66,25 +66,25 @@ function añadirProducto(productoSeleccionado){
 }
 
 function actualizarProducto(e) {
+    console.log(e.target.value)
     //Si actualizamos el input de cantidad:
     if(e.target.classList.contains('amount_input')){
         //Obtenemos la id del producto con el atributo 'data-id' asignado al input
         const updateId = Number(e.target.getAttribute('data-id'))
+        _priceTotal = 0
 
         carrito.forEach(producto =>{
             //Si el producto donde estamos posicionados es igual al updateId:
             if (producto.id === updateId) {
-                //Comprobamos si estamos aumentando o disminuyendo la cantidad
                 if (Number(e.target.value) > producto.cantidad) {
-                    _priceTotal = Number(_priceTotal) + parseFloat(producto.precio)//Aumentamos el monto
-                    _countCart++ //Aumentamos el contador
+                    _countCart = _countCart + Number(e.target.value) - producto.cantidad
                 }else{
-                    _priceTotal = Number(_priceTotal) - parseFloat(producto.precio)//Reducimos el monto
-                    _countCart-- //Reducimos el contador
+                    _countCart = _countCart - (producto.cantidad - Number(e.target.value))
                 }
-                _priceTotal = _priceTotal.toFixed(2)//Formateamos el precio para que tenga 2 decimales
                 producto.cantidad = Number(e.target.value)//Actualizamos la cantidad del producto
             }
+            _priceTotal = parseFloat(_priceTotal) + (parseFloat(producto.precio) * parseFloat(producto.cantidad))
+            _priceTotal = _priceTotal.toFixed(2)
         })
         localStorage.setItem("carritoClave", JSON.stringify(carrito));
     }
@@ -145,7 +145,7 @@ if (localStorage.getItem("carritoClave")) {
     //Recorremos el carrito
     carrito.map(product=>{
         //El precio total es igual al valor de precio total + precio del producto multiplicadp por la cantidad
-        _priceTotal = parseFloat(_priceTotal + product.precio * product.cantidad)
+        _priceTotal = parseFloat(_priceTotal) + parseFloat(product.precio) * parseFloat(product.cantidad)
         _priceTotal = _priceTotal.toFixed(2)
         //El contador es igual al valor de contador + la cantidad del producto
         _countCart = _countCart + product.cantidad
