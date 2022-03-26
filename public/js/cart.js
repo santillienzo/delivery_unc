@@ -66,10 +66,11 @@ function añadirProducto(productoSeleccionado){
 }
 
 function eliminarProducto(e) {
+    console.log(e.target.getAttribute('data-id'))
     //Si hacemos click sobre el btn de eliminar
     if (e.target.classList.contains('eliminar-item')) {
         //Obtenemos la id del producto con el atributo 'data-id' asignado al boton
-        const deleteId = e.target.getAttribute('data-id')
+        const deleteId = Number(e.target.getAttribute('data-id'))
 
         //Recorremos los productos del carrito
         carrito.forEach(producto =>{
