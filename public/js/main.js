@@ -49,11 +49,11 @@ function cargarEscuchaDeEventos() {
   
   //Al hacer click en uno de los botones ejecutamos lo siguiente:
   add_cart_buttons.forEach((btn)=>{
-    btn.addEventListener("click", e=> añadirProducto(e.target.parentElement.parentElement))
+    btn.addEventListener("click", e => añadirProducto(e.target.parentElement.parentElement))
   })
 
   //Al hacer click en la tabla del carrito ejecutamos la función eliminarProducto()
-  tbody.addEventListener("click", e => eliminarProducto(e, carrito))
+  tbody.addEventListener("click", e => eliminarProducto(e))
 }
 
 //----------------ZONA DE EJECUCIÓN DE FUNCIONES ---------------

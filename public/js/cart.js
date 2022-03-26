@@ -26,9 +26,10 @@ carrito_icono.addEventListener("click", ()=>{
 })
 
 function añadirProducto(productoSeleccionado){
+    console.log(productoSeleccionado)
     //Extraemos todos los datos del producto que seleccionemos
     const item = {
-        id: productoSeleccionado.querySelector('.añadir_carrito').getAttribute('id-item'),
+        id: Number(productoSeleccionado.querySelector('.añadir_carrito').getAttribute('id-item')),
         nombre: productoSeleccionado.querySelector('.name').textContent,
         descripcion: productoSeleccionado.querySelector('.description').textContent,
         precio: productoSeleccionado.querySelector('.price').textContent,
@@ -49,6 +50,8 @@ function añadirProducto(productoSeleccionado){
             producto.cantidad++
             _countCart++;
             return producto
+            }else{
+                return producto
             }
         })
         carrito = [...pro]
@@ -60,10 +63,9 @@ function añadirProducto(productoSeleccionado){
     localStorage.setItem("carritoClave", JSON.stringify(carrito));
 
     renderCarrito()
-    console.log(item)
 }
 
-function eliminarProducto(e, carrito) {
+function eliminarProducto(e) {
     //Si hacemos click sobre el btn de eliminar
     if (e.target.classList.contains('eliminar-item')) {
         //Obtenemos la id del producto con el atributo 'data-id' asignado al boton
@@ -125,4 +127,5 @@ if (localStorage.getItem("carritoClave")) {
     renderCarrito()
 }
 
+//Exportamos funciones
 export {eliminarProducto, añadirProducto}
