@@ -1,6 +1,6 @@
 //Importamos las funciones externas que vamos a utilizar
 import {fetchProducts} from './fetch.js'
-import {eliminarProducto, añadirProducto} from './cart.js'
+import {eliminarProducto, añadirProducto, actualizarProducto} from './cart.js'
 
 //Declaramos variables (atrapamos elementos html)
 let seccionHamburguesa = document.getElementById("seccionHamb");
@@ -46,6 +46,7 @@ async function listarTodo() {
 function cargarEscuchaDeEventos() {
   //Atrapamos todos los botones para añadir al carrito
   const add_cart_buttons = document.querySelectorAll('.añadir_carrito')
+  const amount_inputs = document.querySelectorAll('.amount_input')
   
   //Al hacer click en uno de los botones ejecutamos lo siguiente:
   add_cart_buttons.forEach((btn)=>{
@@ -54,6 +55,9 @@ function cargarEscuchaDeEventos() {
 
   //Al hacer click en la tabla del carrito ejecutamos la función eliminarProducto()
   tbody.addEventListener("click", e => eliminarProducto(e))
+
+  //Actualizamos la cantidad del producto al tocar el input Number
+  tbody.addEventListener("change", e=> actualizarProducto(e))
 }
 
 //----------------ZONA DE EJECUCIÓN DE FUNCIONES ---------------

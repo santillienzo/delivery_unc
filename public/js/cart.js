@@ -65,8 +65,33 @@ function añadirProducto(productoSeleccionado){
     renderCarrito()
 }
 
+function actualizarProducto(e) {
+    //Si actualizamos el input de cantidad:
+    if(e.target.classList.contains('amount_input')){
+        //Obtenemos la id del producto con el atributo 'data-id' asignado al input
+        const updateId = Number(e.target.getAttribute('data-id'))
+
+        carrito.forEach(producto =>{
+            //Si el producto donde estamos posicionados es igual al updateId:
+            if (producto.id === updateId) {
+                //Comprobamos si estamos aumentando o disminuyendo la cantidad
+                if (Number(e.target.value) > producto.cantidad) {
+                    _priceTotal = Number(_priceTotal) + parseFloat(producto.precio)//Aumentamos el monto
+                    _countCart++ //Aumentamos el contador
+                }else{
+                    _priceTotal = Number(_priceTotal) - parseFloat(producto.precio)//Reducimos el monto
+                    _countCart-- //Reducimos el contador
+                }
+                _priceTotal = _priceTotal.toFixed(2)//Formateamos el precio para que tenga 2 decimales
+                producto.cantidad = Number(e.target.value)//Actualizamos la cantidad del producto
+            }
+        })
+        localStorage.setItem("carritoClave", JSON.stringify(carrito));
+    }
+    renderCarrito()
+}
+
 function eliminarProducto(e) {
-    console.log(e.target.getAttribute('data-id'))
     //Si hacemos click sobre el btn de eliminar
     if (e.target.classList.contains('eliminar-item')) {
         //Obtenemos la id del producto con el atributo 'data-id' asignado al boton
@@ -101,7 +126,7 @@ function renderCarrito() {
             <td class="table-zona">${nombre}</td>
             <td class="table-precio">$${precio}</td>
             <td class="table-cantidad">
-            <input type="number" min = "1" value=${cantidad} name="" id="">
+            <input type="number" min = "1" value=${cantidad} min="0" max="100" class="amount_input" data-id=${id}>
             </td> 
             <button class="eliminar-item" data-id=${id}> Eliminar</button>
         `;
@@ -120,7 +145,8 @@ if (localStorage.getItem("carritoClave")) {
     //Recorremos el carrito
     carrito.map(product=>{
         //El precio total es igual al valor de precio total + precio del producto multiplicadp por la cantidad
-        _priceTotal = _priceTotal + product.precio * product.cantidad
+        _priceTotal = parseFloat(_priceTotal + product.precio * product.cantidad)
+        _priceTotal = _priceTotal.toFixed(2)
         //El contador es igual al valor de contador + la cantidad del producto
         _countCart = _countCart + product.cantidad
     })
@@ -129,4 +155,4 @@ if (localStorage.getItem("carritoClave")) {
 }
 
 //Exportamos funciones
-export {eliminarProducto, añadirProducto}
+export {eliminarProducto, añadirProducto, actualizarProducto}
