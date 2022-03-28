@@ -1,9 +1,12 @@
 // Atrapo el ícono del carrito y el carrito en sí
 const carrito_icono = document.getElementById('carrito_icon')
 const carrito_container = document.getElementById('carrito__container')
+const close_icono = document.getElementById('close')
+
 //Atrapamos los elementos del html
 const priceTotal = document.querySelector('.itemCartTotal span') //Precio total del carritos
 const countCart = document.querySelector('.carrito_contador') //contador de productos
+
 //Definimos las variables
 let carrito = []; //Array donde se guardarán los productos del carrito
 let _priceTotal = 0; //Precio total
@@ -13,7 +16,12 @@ let _countCart = 0;//Contador de productos
 let carrito_visible = false
 
 //Al hacer click en en el ícono del carrito:
-carrito_icono.addEventListener("click", ()=>{
+carrito_icono.addEventListener("click", ()=> activarCarrito())
+//Al hacer click en el ícono de cerrar:
+close_icono.addEventListener("click", ()=> activarCarrito())
+
+
+function activarCarrito() {
     //Si el carrito es visible le vamos a dar un opacity de 0 al carrito y la variable bandera se volverá falsa
     if (carrito_visible) {
         carrito_container.style.opacity = "0"
@@ -23,7 +31,7 @@ carrito_icono.addEventListener("click", ()=>{
         carrito_container.style.opacity = "1"
         carrito_visible = true
     }
-})
+}
 
 function añadirProducto(productoSeleccionado){
     console.log(productoSeleccionado)

@@ -19,6 +19,15 @@
   transition: .5s;
 }
 
+.close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
 .table-carrito caption{
   font-weight: 500;
   margin-bottom: 5px;
