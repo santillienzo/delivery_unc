@@ -13,7 +13,9 @@ const renderizarProductos = ()=>{
                 data.forEach((producto) => {
                     articuloEnHtml = `
                     <article class="articulo">
-                        <img class="card-foto" src="${producto.imagen}" alt="" />
+                        <div class="articulo_img_container">
+                            <img class="card-foto" src="${producto.imagen}" alt="" />
+                        </div>
                         <h3 class="name">${producto.nombre}</h3>
                         <h2 class="price">${producto.precio}</h2>
                         <p class="description"> ${producto.descripcion}</p>

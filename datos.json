@@ -56,7 +56,6 @@
         "imagen": "./public/img/foto8.jpg",
         "descripcion": "con queso y tomate"
     },
-
     {
         "id": "8",
         "tipo": "pizza",
@@ -64,7 +63,14 @@
         "precio": 1010,
         "imagen": "./public/img/foto9.jpg",
         "descripcion": "con queso y tomate"
+    },
+    {
+        "id": "9",
+        "tipo": "pizza",
+        "nombre": "Especial",
+        "precio": 1010,
+        "imagen": "./public/img/foto9.jpg",
+        "descripcion": "con queso y tomate"
     }
-    
 ]
 
