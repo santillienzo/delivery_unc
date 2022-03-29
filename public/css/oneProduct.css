@@ -1,8 +1,20 @@
 .product_main{
+    margin-bottom: 40px;
+    margin-top: 15px;
+}
+
+.links_redirect a{
+    color: rgb(104, 127, 233);
+}
+.links_redirect i{
+    color: #aaa;
+}
+
+.product_container{
     display: flex;
     background-color: rgb(241, 247, 247);
-    margin: 40px 0;
     padding: 15px;
+    margin-top: 15px;
 }
 
 .product__img-container{

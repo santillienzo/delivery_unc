@@ -97,23 +97,16 @@
         </header>
 
         <!-- Información del producto -->
-        <main class="product_main">
-            <section class="product__img-container">
-                <img src="../img/foto1.jpg" alt="">
-            </section>
-            <section class="product__info-container">
-                <h2>Mac Combo 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellendus, doloremque, error illum molestiae, alias minus minima quis officia aliquid accusamus unde non fuga a nemo quidem voluptates cumque tempora?</p>
-                <span class="price_product">$300</span>
-                <div class="add_to_cart-container">
-                    <label for="quantity">Cantidad</label>
-                    <input type="number" value="1" name="quantity" id="quantity" min="1" max="100">
-                </div>
-                <div class="action-buttons">
-                    <button class="add_cart_btn">Agregar al carrito</button>
-                    <button class="buy_now_btn">Comprar ahora</button>
-                </div>
-            </section>
+        <main class="product_main" id="product_main">
+            <!-- Árbol de redireccionamiento -->
+            <div class="links_redirect" id="links_redirect">
+                <a href="../../index.html">Inicio</a>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <!-- Esto se rellena con la información proveniente de los scripts -->
+            <div class="product_container" id="product_container">
+
+            </div>
         </main>
 
     </div>

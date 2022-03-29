@@ -35,28 +35,41 @@ function cargarEscuchaDeEventos() {
 function activarCarrito() {
     //Si el carrito es visible le vamos a dar un opacity de 0 al carrito y la variable bandera se volverá falsa
     if (carrito_visible) {
-        carrito_container.style.opacity = "0"
+        carrito_container.style.display = "none"
         carrito_visible = false
     }else{
     //Si el carrito no es visible le vamos a dar un opacity de 1 al carrito y la variable bandera se volverá verdadera
-        carrito_container.style.opacity = "1"
+        carrito_container.style.display = "block"
         carrito_visible = true
     }
 }
 
 function añadirProducto(productoSeleccionado){
     console.log(productoSeleccionado)
+    let quantity;
+
+    //Con esta parte del código comprobamos si estamos en la pantalla de inicio o en la página del producto
+    //Si existe el input de cantidad:
+    if (productoSeleccionado.querySelector('#quantity')) {
+        //Quantity es igual al valor de ese input
+        quantity = productoSeleccionado.querySelector('#quantity').value
+    }else{
+        //Si no es igual a 1
+        quantity = 1
+    }
+
+    console.log(quantity)
     //Extraemos todos los datos del producto que seleccionemos
     const item = {
         id: Number(productoSeleccionado.querySelector('.añadir_carrito').getAttribute('id-item')),
         nombre: productoSeleccionado.querySelector('.name').textContent,
         descripcion: productoSeleccionado.querySelector('.description').textContent,
         precio: productoSeleccionado.querySelector('.price').textContent,
-        cantidad: 1
+        cantidad: Number(quantity)
     }
 
     //Sumamos el precio total
-    _priceTotal = parseFloat(_priceTotal) + parseFloat(item.precio)
+    _priceTotal = parseFloat(_priceTotal) + (parseFloat(item.precio) * item.cantidad)
     _priceTotal = _priceTotal.toFixed(2)
 
     //Comprobamos que el producto existe en el carrito
@@ -66,9 +79,9 @@ function añadirProducto(productoSeleccionado){
     if (exist) {
         const pro = carrito.map(producto=>{
             if (producto.id === item.id) {
-            producto.cantidad++
-            _countCart++;
-            return producto
+                producto.cantidad+= item.cantidad
+                _countCart+= item.cantidad;
+                return producto
             }else{
                 return producto
             }
@@ -76,9 +89,15 @@ function añadirProducto(productoSeleccionado){
         carrito = [...pro]
     }else{
         carrito = [...carrito, item]
-        _countCart++;
+        _countCart+= item.cantidad;
     }
 
+    //Si existe el input de cantidad lo reseteamos a 1
+    if (productoSeleccionado.querySelector('#quantity')) {
+        productoSeleccionado.querySelector('#quantity').value = "1"
+    }
+
+    //Añadimos el array al localStorage
     localStorage.setItem("carritoClave", JSON.stringify(carrito));
 
     renderCarrito()
