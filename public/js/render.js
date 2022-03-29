@@ -1,4 +1,5 @@
 //Llamamos los datos de nuestro archivo 'datos.json'
+//Renderizamos todos los productos del archivo dividiendolo por secciones
 const renderizarProductos = ()=>{
     let articuloEnHtml = " ";
     let seccionHamburguesa = document.getElementById("seccionHamb");
@@ -38,6 +39,11 @@ const renderizarProductos = ()=>{
             .catch(error=>{
                 console.log(error)
             })
+}
+
+//Renderizamos solo UN producto
+const renderizarUnProducto = (id)=>{
+
 }
 
 //Exportamos funciones
