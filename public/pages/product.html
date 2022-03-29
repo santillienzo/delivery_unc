@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="../css/carrito.css">
     <!-- Estilos del nav -->
     <link rel="stylesheet" href="../css/nav.css">
+    <!-- Estilos footer -->
+    <link rel="stylesheet" href="../css/footer.css">
+    <!-- Estilos de un solo producto -->
+    <link rel="stylesheet" href="../css/oneProduct.css">
 </head>
 <body>
     <div class="container">
@@ -92,9 +96,60 @@
             </nav>
         </header>
 
-        <main>
-            
+        <!-- Información del producto -->
+        <main class="product_main">
+            <section class="product__img-container">
+                <img src="../img/foto1.jpg" alt="">
+            </section>
+            <section class="product__info-container">
+                <h2>Mac Combo 1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellendus, doloremque, error illum molestiae, alias minus minima quis officia aliquid accusamus unde non fuga a nemo quidem voluptates cumque tempora?</p>
+                <span class="price_product">$300</span>
+                <div class="add_to_cart-container">
+                    <label for="quantity">Cantidad</label>
+                    <input type="number" value="1" name="quantity" id="quantity" min="1" max="100">
+                </div>
+                <div class="action-buttons">
+                    <button class="add_cart_btn">Agregar al carrito</button>
+                    <button class="buy_now_btn">Comprar ahora</button>
+                </div>
+            </section>
         </main>
+
+    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <section class="section-footer">
+                <article class="footer-data">
+                <i class="fas fa-credit-card"></i>
+                <h2>Pagá con tarjeta o en efectivo</h2>
+                <p>
+                    Acá pongo zaraza
+                </p>
+                </article>
+        
+                <article class="footer-data">
+                <i class="fas fa-gift"></i>
+                <h2>Envío gratis desde $ 1.999</h2>
+                <p>
+                    Acá pongo zaraza.
+                </p>
+                </article>
+        
+                <article class="footer-data">
+                <i class="fas fa-user-shield"></i>
+                <h2>Seguridad, de principio a fin</h2>
+                <p>
+                    Acá pongo zaraza
+                </p>
+                </article>
+            </section>
+        </div>
+    </footer>
+    <div class="sub-footer">
+        <div class="container">
+        <p>Copyright © 2022 Cortez</p>
+        </div>
     </div>
 
     <script type="module" src="../js/oneProduct.js"></script>
