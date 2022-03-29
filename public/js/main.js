@@ -1,9 +1,6 @@
 //Importamos las funciones externas que vamos a utilizar
 import {renderizarProductos} from './render.js'
-import {eliminarProducto, añadirProducto, actualizarProducto} from './cart.js'
-
-//Declaramos variables (atrapamos elementos html)
-const tbody = document.getElementById("tbody"); //tbody
+import {añadirProducto} from './cart.js'
 
 
 //----------------ZONA DE DEFINICION DE FUNCIONES ---------------
@@ -16,12 +13,6 @@ function cargarEscuchaDeEventos() {
   add_cart_buttons.forEach((btn)=>{
     btn.addEventListener("click", e => añadirProducto(e.target.parentElement.parentElement))
   })
-
-  //Al hacer click en la tabla del carrito ejecutamos la función eliminarProducto()
-  tbody.addEventListener("click", e => eliminarProducto(e))
-
-  //Actualizamos la cantidad del producto al tocar el input Number
-  tbody.addEventListener("change", e=> actualizarProducto(e))
 }
 
 //----------------ZONA DE EJECUCIÓN DE FUNCIONES ---------------

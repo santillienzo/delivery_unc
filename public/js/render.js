@@ -18,8 +18,8 @@ const renderizarProductos = ()=>{
                         <p class="description"> ${producto.descripcion}</p>
                         <div class="footer-card">
                             <a 
-                            class="vinculo" 
-                            href="propiedadesDetail.html?zona=${producto.zona}&descripcion=${producto.Descripcion}"
+                                class="vinculo" 
+                                href="public/pages/product.html?producto=${producto.id}"
                             >Ver Más<i class="fas fa-angle-double-right"></i></a>
                             <i class="fas fa-shopping-cart añadir_carrito" id-item=${producto.id}></i>
                             <i id="corazon" class="fas fa-heart"></i>

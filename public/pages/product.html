@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap"
+        rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/af9ea1f796.js" crossorigin="anonymous"></script>
+
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- Estilos del carrito -->
+    <link rel="stylesheet" href="../css/carrito.css">
+    <!-- Estilos del nav -->
+    <link rel="stylesheet" href="../css/nav.css">
+</head>
+<body>
+    <div class="container">
+        <header class="form-titulo">
+            <nav class="nav-main">
+            <img src="../img/logo.jpg" alt="milogo" class="nav-brand" />
+            <!-- Right Nav -->
+            <ul class="nav-main-busqueda">
+                <li>
+                    <form action="/public/pages/search.html" method="GET" class="header__form">
+                    <select name="select">
+                        <option value="value1" selected>Todo</option>
+                        <option value="value2">Hamburguesas</option>
+                        <option value="value3">Pizzas</option>
+                    </select>
+                    
+                    <input
+                        type="text"
+                        name="search"
+                        class="input__search"
+                        placeholder="Buscar productos"
+                    />
+
+                    <button type="submit" class="header__lupa">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    </form>
+                </li>
+            </ul>
+            <ul class="nav-main-iconos">
+                <li>
+                    <a href="registerAdd.html"><i class="fas fa-user-circle"></i> </a>
+                </li>
+                <li>
+                    <span class="carrito_contador">0</span>
+                    <span class="carrito_nav" id="carrito_icon"><i class="fas fa-shopping-cart"></i></span>
+                </li>
+                <li>
+                    <a href="registerAdd.html"><i class="fas fa-heart"></i> </a>
+                </li>
+            </ul>
+            <!-- ACA SE INYECTA DINAMICAMENTE carro -->
+            <div class="carrito__container" id="carrito__container">
+                <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
+                    <table class="table-carrito table-dark table-hover">
+                        <caption>Mi carrito</caption>
+                        <thead>
+                        <tr class="text-primary">
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody class="tbody" id="tbody">
+                        </tbody>
+                    </table>
+                    <div class="total_container">
+                        <div class="col">
+                        <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                        <button class="btn-comprar">COMPRAR</button>
+                        </div>
+                    </div>
+                </div>
+            <!-- fin carro -->
+            </nav>
+        </header>
+    </div>
+
+
+    <script type="module" src="../js/render.js"></script>
+    <script type="module" src="../js/cart.js"></script>
+</body>
+</html>

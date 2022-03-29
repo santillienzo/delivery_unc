@@ -15,11 +15,22 @@ let _countCart = 0;//Contador de productos
 // Variable bandera para controlar que el carrito este visible o no.
 let carrito_visible = false
 
+//Declaramos variables (atrapamos elementos html)
+const tbody = document.getElementById("tbody"); //tbody
+
 //Al hacer click en en el ícono del carrito:
 carrito_icono.addEventListener("click", ()=> activarCarrito())
 //Al hacer click en el ícono de cerrar:
 close_icono.addEventListener("click", ()=> activarCarrito())
 
+// ZONA DE DEFINICIÓN DE FUNCIONES
+function cargarEscuchaDeEventos() {
+    //Al hacer click en la tabla del carrito ejecutamos la función eliminarProducto()
+    tbody.addEventListener("click", e => eliminarProducto(e))
+    
+    //Actualizamos la cantidad del producto al tocar el input Number
+    tbody.addEventListener("change", e=> actualizarProducto(e))
+}
 
 function activarCarrito() {
     //Si el carrito es visible le vamos a dar un opacity de 0 al carrito y la variable bandera se volverá falsa
@@ -161,6 +172,9 @@ if (localStorage.getItem("carritoClave")) {
     
     renderCarrito()
 }
+
+//Ejecución de funciones
+cargarEscuchaDeEventos()
 
 //Exportamos funciones
 export {eliminarProducto, añadirProducto, actualizarProducto}
