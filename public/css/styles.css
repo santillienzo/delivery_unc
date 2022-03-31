@@ -46,4 +46,5 @@ a:hover {
 .container {
   width: 90%;
   margin: auto;
+  padding-top: 90px;
 }

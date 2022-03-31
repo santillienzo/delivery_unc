@@ -2,6 +2,7 @@
 const carrito_icono = document.getElementById('carrito_icon')
 const carrito_container = document.getElementById('carrito__container')
 const close_icono = document.getElementById('close')
+const btn_salir_carrito = document.getElementById('btn_salir_carrito')
 
 //Atrapamos los elementos del html
 const priceTotal = document.querySelector('.itemCartTotal span') //Precio total del carritos
@@ -22,6 +23,7 @@ const tbody = document.getElementById("tbody"); //tbody
 carrito_icono.addEventListener("click", ()=> activarCarrito())
 //Al hacer click en el ícono de cerrar:
 close_icono.addEventListener("click", ()=> activarCarrito())
+btn_salir_carrito.addEventListener("click", ()=> activarCarrito())
 
 // ZONA DE DEFINICIÓN DE FUNCIONES
 function cargarEscuchaDeEventos() {

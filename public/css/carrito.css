@@ -69,12 +69,18 @@
   align-items: center;
 }
 
-.btn-comprar{
-  background-color: rgb(18, 89, 195);
+.btn{
   color: #fff;
   border: none;
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 5px;
+}
+
+.btn-comprar{
+  background-color: rgb(18, 89, 195);
+}
+.btn-salir{
+  background-color: rgb(247, 82, 82);
 }

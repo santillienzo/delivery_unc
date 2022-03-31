@@ -36,7 +36,7 @@
           <ul class="nav-main-busqueda">
             <li>
               <form action="/public/pages/search.html" method="GET" class="header__form">
-                <select name="select">
+                <select name="select" class="header__select">
                   <option value="value1" selected>Todo</option>
                   <option value="value2">Hamburguesas</option>
                   <option value="value3">Pizzas</option>
@@ -85,8 +85,9 @@
               <div class="col">
                 <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
               </div>
-              <div class="col d-flex justify-content-end">
-                <button class="btn-comprar">COMPRAR</button>
+              <div class="">
+                <button class="btn-salir btn" id="btn_salir_carrito">SALIR</button>
+                <button class="btn-comprar btn">COMPRAR</button>
               </div>
             </div>
           </div>

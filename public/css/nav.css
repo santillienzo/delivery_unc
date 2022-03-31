@@ -10,11 +10,14 @@
     height: 90px;
     padding: 20px 0;
     align-items: center;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
 }
 
+/* BUSCADOR */
 .nav-main-busqueda{
-    font-size: 27px;
     display: flex;
     justify-content: space-between;
 }
@@ -24,17 +27,34 @@
     width: 100%;
 }
 
+.header__select{
+    border: solid 1px rgb(197, 191, 191);
+    background-color: #fff;
+    border-radius: 5px 0 0 5px ;
+}
+
 .input__search{
+    display: inline-block;
+    width: 500px;
     height: 30px;
     font-size: 14px;
-    border: solid 2px rgb(197, 191, 191);
+    border: solid 1px rgb(197, 191, 191);
+    border-left: none;
+    border-right: none;
     padding: 6px;
-    border-radius: 5px;
-    text-align: center;
-    margin-right:7px ;
-    margin-left:7px ;
     flex: 1;
+    padding-left: 25px;
 }
+.header__lupa{
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 0;
+    border: solid 1px rgb(197, 191, 191);
+    margin: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+/* --- */
 
 .carrito_nav{
     position: relative;
@@ -60,7 +80,7 @@
   /* Achico la imagen a 100 pixel */
 .nav-brand {
     background-color: chocolate;
-    width: 90px;
+    height: 90px;
 }
 
 /* Se cre un flex para que las LI estén horizontales*/
@@ -76,4 +96,55 @@
 .nav-main-iconos li{
     margin-left: 15px;
     position: relative;
+}
+
+@media (max-width: 850px) {
+    .nav-main{
+        max-width: 100%;
+        left: 0;
+        height: 50px;
+    }
+
+    .nav-brand {
+        height: 50px;
+    }
+
+    /* Buscador */
+    .nav-main-busqueda{
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .header__form{
+        display: flex;
+        width: 100%;
+    }
+    
+    .header__select{
+        border: solid 1px rgb(197, 191, 191);
+        background-color: #fff;
+        border-radius: 5px 0 0 5px ;
+    }
+    
+    .input__search{
+        display: inline-block;
+        width: 500px;
+        height: 30px;
+        font-size: 14px;
+        border: solid 1px rgb(197, 191, 191);
+        border-left: none;
+        border-right: none;
+        padding: 6px;
+        flex: 1;
+        padding-left: 25px;
+    }
+    .header__lupa{
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 0;
+        border: solid 1px rgb(197, 191, 191);
+        margin: 0;
+        border-radius: 0 5px 5px 0;
+    }
 }
