@@ -1,5 +1,5 @@
 //Realizamos las importaciones
-import { añadirProducto } from "./cart.js";
+import { agregarProducto } from "./cart.js";
 import { renderizarUnProducto } from "./render.js";
 
 //window.location.search sirve para ver los pará,etros que trae consigo la url
@@ -12,7 +12,7 @@ const id_producto = urlParams.get('producto');
 function cargarEscuchaDeEventos() {
     const add_cart_btn = document.getElementById('add_cart_btn')
 
-    add_cart_btn.addEventListener("click", (e)=> añadirProducto(e.target.parentElement.parentElement.parentElement))
+    add_cart_btn.addEventListener("click", (e)=> agregarProducto(e.target.parentElement.parentElement.parentElement))
 }
 
 // Ejecución de funciones

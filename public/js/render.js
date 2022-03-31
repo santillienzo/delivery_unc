@@ -24,7 +24,7 @@ const renderizarProductos = ()=>{
                                 class="vinculo" 
                                 href="public/pages/product.html?producto=${producto.id}"
                             >Ver Más<i class="fas fa-angle-double-right"></i></a>
-                            <i class="fas fa-shopping-cart añadir_carrito" id-item=${producto.id}></i>
+                            <i class="fas fa-shopping-cart agregar_carrito" id-item=${producto.id}></i>
                             <i id="corazon" class="fas fa-heart"></i>
                         </div>
                     </article>
@@ -66,7 +66,7 @@ const renderizarUnProducto = (id)=>{
                                 <input type="number" value="1" name="quantity" id="quantity" min="1" max="100">
                             </div>
                             <div class="action-buttons">
-                                <button class="add_cart_btn añadir_carrito" id="add_cart_btn" id-item=${producto.id}>Agregar al carrito</button>
+                                <button class="add_cart_btn agregar_carrito" id="add_cart_btn" id-item=${producto.id}>Agregar al carrito</button>
                                 <button class="buy_now_btn">Comprar ahora</button>
                             </div>
                         </section>

@@ -44,7 +44,7 @@ function activarCarrito() {
     }
 }
 
-function añadirProducto(productoSeleccionado){
+function agregarProducto(productoSeleccionado){
     console.log(productoSeleccionado)
     let quantity;
 
@@ -61,7 +61,7 @@ function añadirProducto(productoSeleccionado){
     console.log(quantity)
     //Extraemos todos los datos del producto que seleccionemos
     const item = {
-        id: Number(productoSeleccionado.querySelector('.añadir_carrito').getAttribute('id-item')),
+        id: Number(productoSeleccionado.querySelector('.agregar_carrito').getAttribute('id-item')),
         nombre: productoSeleccionado.querySelector('.name').textContent,
         descripcion: productoSeleccionado.querySelector('.description').textContent,
         precio: productoSeleccionado.querySelector('.price').textContent,
@@ -196,4 +196,4 @@ if (localStorage.getItem("carritoClave")) {
 cargarEscuchaDeEventos()
 
 //Exportamos funciones
-export {eliminarProducto, añadirProducto, actualizarProducto}
+export {eliminarProducto, agregarProducto, actualizarProducto}
