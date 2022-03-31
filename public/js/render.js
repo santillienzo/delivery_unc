@@ -1,13 +1,71 @@
-import { categorias } from "./categorias.js";
+import { secciones } from "./secciones.js";
 
 
 //Llamamos los datos de nuestro archivo 'datos.json'
 //Renderizamos todos los productos del archivo dividiendolo por secciones
 //Pedido de datos con async/await
 const renderizarProductos = async()=>{
-    const seccionHamburguesa = document.getElementById("seccionHamb"); //Traemos las sección de hamburguesas
-    const seccionPizza = document.getElementById("seccionPizza"); //Traemos la sección de pizzas
-    let articuloEnHtml = " "; //Esto es lo que renderizará en cada vuelta
+    const res = await fetch("datos.json") //Pedimos los datos a la api
+    const data = await res.json() //Convertimos esos datos en archivo javaScript
+
+    const main = document.getElementById("main");   //Traemos el main
+    let listaSecciones = [];  //En este array se almacenarán las secciones para luego renderizar los articulos
+
+    let seccionEnHtml = " ";   //Acá se guardará el renderizado dinámico de cada sección
+    let articuloEnHtml = " ";   //Acá se guardará el renderizado dinámico de cada artículo
+
+
+    //Recorremos el array de secciones 
+    secciones.map(seccion=>{
+        //Por cada sección se renderizará el siguiente html:
+        seccionEnHtml= `
+            <h2 class="title-sections">${seccion.name}</h2>
+
+            <section class="news-cards" id="${seccion.id}">
+
+            </section>
+        `
+        //Insertamos el html en el main
+        main.innerHTML += seccionEnHtml
+    })
+    
+    //Toda etiqueta <section> se guardará en este array 
+    listaSecciones = document.querySelectorAll('.news-cards')
+
+    //Recorremos el array de etiquetas <section>
+    listaSecciones.forEach(seccion=>{
+        //Almacenamos el id de cada uno que es igual a la sección que corresponde
+        let id = seccion.id
+        
+        //Recorremos nuestros productos
+        data.map(producto=>{
+            //Por cada producto se ejecutará el siguiente html:
+            articuloEnHtml = `
+                <article class="articulo">
+                    <div class="articulo_img_container">
+                        <img class="card-foto" src="${producto.imagen}" alt="" />
+                    </div>
+                    <h3 class="name">${producto.nombre}</h3>
+                    <h2 class="price">${producto.precio}</h2>
+                    <p class="description"> ${producto.descripcion}</p>
+                    <div class="footer-card">
+                        <a 
+                            class="vinculo" 
+                            href="public/pages/product.html?producto=${producto.id}"
+                        >Ver Más<i class="fas fa-angle-double-right"></i></a>
+                        <i class="fas fa-shopping-cart agregar_carrito" id-item=${producto.id}></i>
+                        <i id="corazon" class="fas fa-heart"></i>
+                    </div>
+                </article>
+            `;
+
+            //Si el tipo de producto es igual al id de la sección actual se insertará el html
+            if (producto.tipo === id) {
+                seccion.innerHTML+= articuloEnHtml
+            }
+        })
+    })
+
 
 }
 
