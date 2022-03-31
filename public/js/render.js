@@ -1,3 +1,6 @@
+import { categorias } from "./categorias.js";
+
+
 //Llamamos los datos de nuestro archivo 'datos.json'
 //Renderizamos todos los productos del archivo dividiendolo por secciones
 //Pedido de datos con async/await
@@ -6,38 +9,6 @@ const renderizarProductos = async()=>{
     const seccionPizza = document.getElementById("seccionPizza"); //Traemos la sección de pizzas
     let articuloEnHtml = " "; //Esto es lo que renderizará en cada vuelta
 
-    const res = await fetch("datos.json") //Pedimos los datos a la api
-
-    const data = await res.json() //Convertimos esos datos en archivo javaScript
-
-    //Recorremos los datos convertidos
-    data.forEach((producto) => {
-        articuloEnHtml = `
-        <article class="articulo">
-            <div class="articulo_img_container">
-                <img class="card-foto" src="${producto.imagen}" alt="" />
-            </div>
-            <h3 class="name">${producto.nombre}</h3>
-            <h2 class="price">${producto.precio}</h2>
-            <p class="description"> ${producto.descripcion}</p>
-            <div class="footer-card">
-                <a 
-                    class="vinculo" 
-                    href="public/pages/product.html?producto=${producto.id}"
-                >Ver Más<i class="fas fa-angle-double-right"></i></a>
-                <i class="fas fa-shopping-cart agregar_carrito" id-item=${producto.id}></i>
-                <i id="corazon" class="fas fa-heart"></i>
-            </div>
-        </article>
-        `;
-    
-      //Si el artículo tiene como status venta lo colocamos en la sección articuloVenta
-        if (producto.tipo === "hamburguesa") {
-            seccionHamburguesa.innerHTML += articuloEnHtml;
-        } else {
-            seccionPizza.innerHTML += articuloEnHtml;
-        }
-    })
 }
 
 //Renderizamos solo UN producto
