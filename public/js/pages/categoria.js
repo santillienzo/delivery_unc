@@ -1,4 +1,5 @@
 import { renderizarCategoria } from "../render/render.js";
+import { agregarProducto } from "../utils/cart.js";
 
 //window.location.search sirve para ver los pará,etros que trae consigo la url
 const valores = window.location.search;
@@ -7,6 +8,18 @@ const urlParams = new URLSearchParams(valores);
 //Accedemos a los valores get de la categoria
 const id_categoria = urlParams.get('categoria');
 
+//----------------ZONA DE DEFINICION DE FUNCIONES ---------------
+//En esta función guardamos todos los eventos que utilicemos 
+function cargarEscuchaDeEventos() {
+    //Atrapamos todos los botones para añadir al carrito
+    const add_cart_buttons = document.querySelectorAll('.agregar_carrito')
+    
+    //Al hacer click en uno de los botones ejecutamos lo siguiente:
+    add_cart_buttons.forEach((btn)=>{
+        btn.addEventListener("click", e => agregarProducto(e.target.parentElement.parentElement))
+    })
+}
 
-
-renderizarCategoria(id_categoria)
+//----------------ZONA DE EJECUCIÓN DE FUNCIONES ---------------
+await renderizarCategoria(id_categoria)
+cargarEscuchaDeEventos()
