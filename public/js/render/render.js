@@ -1,3 +1,6 @@
+//Importamos los datos necesarios
+import { categorias } from "../categorias.js"; 
+
 //Llamamos los datos de nuestro archivo 'datos.json'
 //Renderizamos todos los productos del archivo dividiendolo por secciones
 //Pedido de datos con async/await
@@ -87,5 +90,48 @@ const renderizarUnProducto = async(id)=>{
             }).catch(error=> console.log(error))
 }
 
+const renderizarCategoria = async(id_categoria)=>{
+    let articuloEnHtml = " ";
+    const seccionCategoria = document.getElementById("seccionCategoria"); //Traemos las sección de la categoría
+    const titulo = document.getElementById('title-sections') //Traemos el h2 del tiulo de la sección
+
+    //Recorremos las categorías y si el id de la categoría es igual a id_categoria se insertará en el html
+    //ese nombre
+    categorias.map(categoria=>{
+        if (categoria.id === id_categoria) {
+            titulo.innerHTML = categoria.name
+        }
+    })
+
+    const res = await fetch("../../datos.json") //Pedimos los datos a la api
+    const data = await res.json() //Convertimos esos datos en archivo javaScript
+
+    //Recorremos los datos convertidos
+    data.forEach((producto) => {
+        articuloEnHtml = `
+        <article class="articulo">
+            <div class="articulo_img_container">
+                <img class="card-foto" src="../../${producto.imagen}" alt="" />
+            </div>
+            <h3 class="name">${producto.nombre}</h3>
+            <h2 class="price">${producto.precio}</h2>
+            <p class="description"> ${producto.descripcion}</p>
+            <div class="footer-card">
+                <a 
+                    class="vinculo" 
+                    href="public/pages/product.html?producto=${producto.id}"
+                >Ver Más<i class="fas fa-angle-double-right"></i></a>
+                <i class="fas fa-shopping-cart agregar_carrito" id-item=${producto.id}></i>
+                <i id="corazon" class="fas fa-heart"></i>
+            </div>
+        </article>
+        `;
+
+        if (producto.tipo === id_categoria) {
+            seccionCategoria.innerHTML += articuloEnHtml
+        }
+    })
+}
+
 //Exportamos funciones
-export {renderizarProductos, renderizarUnProducto}
+export {renderizarProductos, renderizarUnProducto, renderizarCategoria}
