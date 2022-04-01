@@ -36,22 +36,20 @@
             <ul class="nav-main-busqueda">
                 <li>
                     <form action="/public/pages/search.html" method="GET" class="header__form">
-                    <select name="select">
-                        <option value="value1" selected>Todo</option>
-                        <option value="value2">Hamburguesas</option>
-                        <option value="value3">Pizzas</option>
-                    </select>
-                    
-                    <input
-                        type="text"
-                        name="search"
-                        class="input__search"
-                        placeholder="Buscar productos"
-                    />
-
-                    <button type="submit" class="header__lupa">
-                        <i class="fas fa-search"></i>
-                    </button>
+                        <select name="select" class="header__select" id="header__select" >
+                            <option value="value1" selected>Todo</option>
+                            <option selected value="value2">Hamburguesas</option>
+                            <option value="value3">Pizzas</option>
+                        </select>
+                        <input
+                            type="text"
+                            name="search"
+                            class="input__search"
+                            placeholder="Buscar productos"
+                        />
+                        <button type="submit" class="header__lupa">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </form>
                 </li>
             </ul>
@@ -146,6 +144,8 @@
         </div>
     </div>
 
+    
+    <script type="module" src="../js/nav.js"></script>
     <script type="module" src="../js/oneProduct.js"></script>
     <script type="module" src="../js/render.js"></script>
     <script type="module" src="../js/cart.js"></script>
