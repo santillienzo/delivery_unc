@@ -100,7 +100,7 @@ const renderizarCategoria = async(id_categoria)=>{
     //ese nombre
     categorias.map(categoria=>{
         if (categoria.id === id_categoria) {
-            titulo.innerHTML = categoria.name
+            titulo.innerHTML = `Categoría | <span> ${categoria.name}</span>`
             linksRedirect.innerHTML += `<a href="">${categoria.name}</a>`
         }
     })
