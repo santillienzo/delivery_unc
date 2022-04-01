@@ -121,7 +121,7 @@ const renderizarCategoria = async(id_categoria)=>{
             <div class="footer-card">
                 <a 
                     class="vinculo" 
-                    href="public/pages/product.html?producto=${producto.id}"
+                    href="http://localhost:5500/public/pages/product.html?producto=${producto.id}"
                 >Ver Más<i class="fas fa-angle-double-right"></i></a>
                 <i class="fas fa-shopping-cart agregar_carrito" id-item=${producto.id}></i>
                 <i id="corazon" class="fas fa-heart"></i>
