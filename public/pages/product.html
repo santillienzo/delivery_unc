@@ -28,70 +28,70 @@
     <link rel="stylesheet" href="../css/oneProduct.css">
 </head>
 <body>
-    <div class="container">
-        <header class="form-titulo">
-            <nav class="nav-main">
-            <img src="../img/logo.jpg" alt="milogo" class="nav-brand" />
-            <!-- Right Nav -->
-            <ul class="nav-main-busqueda">
-                <li>
-                    <form action="/public/pages/search.html" method="GET" class="header__form">
-                        <select name="select" class="header__select" id="header__select" >
-                            <option value="value1" selected>Todo</option>
-                        </select>
-                        <input
-                            type="text"
-                            name="search"
-                            class="input__search"
-                            placeholder="Buscar productos"
-                        />
-                        <button type="submit" class="header__lupa">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
-                </li>
-            </ul>
-            <ul class="nav-main-iconos">
-                <li>
-                    <a href="registerAdd.html"><i class="fas fa-user-circle"></i> </a>
-                </li>
-                <li>
-                    <span class="carrito_contador">0</span>
-                    <span class="carrito_nav" id="carrito_icon"><i class="fas fa-shopping-cart"></i></span>
-                </li>
-                <li>
-                    <a href="registerAdd.html"><i class="fas fa-heart"></i> </a>
-                </li>
-            </ul>
-            <!-- ACA SE INYECTA DINAMICAMENTE carro -->
-            <div class="carrito__container" id="carrito__container">
-                <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
-                    <table class="table-carrito table-dark table-hover">
-                        <caption>Mi carrito</caption>
-                        <thead>
-                        <tr class="text-primary">
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col"></th>
-                        </tr>
-                        </thead>
-                        <tbody class="tbody" id="tbody">
-                        </tbody>
-                    </table>
-                    <div class="total_container">
-                        <div class="col">
-                        <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
-                        </div>
-                        <div class="col d-flex justify-content-end">
-                            <button class="btn-salir btn" id="btn_salir_carrito">SALIR</button>
-                            <button class="btn-comprar btn">COMPRAR</button>
-                        </div>
+    <header class="form-titulo">
+        <nav class="nav-main">
+        <img src="../img/logo.jpg" alt="milogo" class="nav-brand" />
+        <!-- Right Nav -->
+        <ul class="nav-main-busqueda">
+            <li>
+                <form action="/public/pages/search.html" method="GET" class="header__form">
+                    <select name="select" class="header__select" id="header__select" >
+                        <option value="value1" selected>Todo</option>
+                    </select>
+                    <input
+                        type="text"
+                        name="search"
+                        class="input__search"
+                        placeholder="Buscar productos"
+                    />
+                    <button type="submit" class="header__lupa">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </li>
+        </ul>
+        <ul class="nav-main-iconos">
+            <li>
+                <a href="registerAdd.html"><i class="fas fa-user-circle"></i> </a>
+            </li>
+            <li>
+                <span class="carrito_contador">0</span>
+                <span class="carrito_nav" id="carrito_icon"><i class="fas fa-shopping-cart"></i></span>
+            </li>
+            <li>
+                <a href="registerAdd.html"><i class="fas fa-heart"></i> </a>
+            </li>
+        </ul>
+        <!-- ACA SE INYECTA DINAMICAMENTE carro -->
+        <div class="carrito__container" id="carrito__container">
+            <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
+                <table class="table-carrito table-dark table-hover">
+                    <caption>Mi carrito</caption>
+                    <thead>
+                    <tr class="text-primary">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody class="tbody" id="tbody">
+                    </tbody>
+                </table>
+                <div class="total_container">
+                    <div class="col">
+                    <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <button class="btn-salir btn" id="btn_salir_carrito">SALIR</button>
+                        <button class="btn-comprar btn">COMPRAR</button>
                     </div>
                 </div>
-            <!-- fin carro -->
-            </nav>
-        </header>
+            </div>
+        <!-- fin carro -->
+        </nav>
+    </header>
+    <div class="container">
 
         <!-- Información del producto -->
         <main class="product_main" id="product_main">

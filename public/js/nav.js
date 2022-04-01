@@ -13,13 +13,15 @@ function cargarEscuchaDeEventos(){
 
 //Rellenar select con sus options
 const rellenarSelect=()=>{
-    let optionsHtml = ""
+    let optionsHtml = ""    //Aquí se guardará el html
 
+    //Recorremos las categorías y rellenamos dinámicamente el select con los options
     categorias.map(categoria=>{
         optionsHtml = `
             <option value="${categoria.id}">${categoria.name}</option>
         `
 
+        //Insertamos la opción en el select
         select.innerHTML += optionsHtml
     })
 }
