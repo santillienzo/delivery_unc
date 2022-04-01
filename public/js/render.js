@@ -2,12 +2,12 @@
 //Renderizamos todos los productos del archivo dividiendolo por secciones
 //Pedido de datos con async/await
 const renderizarProductos = async()=>{
-    const seccionHamburguesa = document.getElementById("seccionHamb"); //Traemos las sección de hamburguesas
-    const seccionPizza = document.getElementById("seccionPizza"); //Traemos la sección de pizzas
+    const seccionOferta = document.getElementById("seccionOferta"); //Traemos las sección de hamburguesas
+    const seccionMasVendido = document.getElementById("seccionMasVendido"); //Traemos la sección de pizzas
+    const seccionTodo = document.getElementById("seccionTodo"); //Traemos la sección de pizzas
     let articuloEnHtml = " "; //Esto es lo que renderizará en cada vuelta
 
     const res = await fetch("datos.json") //Pedimos los datos a la api
-
     const data = await res.json() //Convertimos esos datos en archivo javaScript
 
     //Recorremos los datos convertidos
@@ -32,11 +32,14 @@ const renderizarProductos = async()=>{
         `;
     
       //Si el artículo tiene como status venta lo colocamos en la sección articuloVenta
-        if (producto.tipo === "hamburguesa") {
-            seccionHamburguesa.innerHTML += articuloEnHtml;
-        } else {
-            seccionPizza.innerHTML += articuloEnHtml;
+        if (producto.oferta) {
+            seccionOferta.innerHTML += articuloEnHtml;
+        } 
+        if(producto.mas_vendido){
+            seccionMasVendido.innerHTML += articuloEnHtml;
         }
+
+        seccionTodo.innerHTML += articuloEnHtml;
     })
 }
 

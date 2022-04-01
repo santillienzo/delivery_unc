@@ -5,7 +5,9 @@
         "nombre": "Mac Combo1",
         "precio": 600,
         "imagen": "./public/img/foto1.jpg",
-        "descripcion": "Hamburguesa completa"
+        "descripcion": "Hamburguesa completa",
+        "mas_vendido": false,
+        "oferta": true
     },
     {
         "id": "2",
@@ -13,7 +15,9 @@
         "nombre": "Mac Combo2",
         "precio": 650,
         "imagen": "./public/img/foto2.jpg",
-        "descripcion": "Hamburguesa completa"
+        "descripcion": "Hamburguesa completa",
+        "mas_vendido": true,
+        "oferta": true
     },
     {
         "id": "3",
@@ -21,7 +25,9 @@
         "nombre": "Mac Combo3",
         "precio": 700,
         "imagen": "./public/img/foto3.jpg",
-        "descripcion": "Casa con 3 ambientes y 2 baños"
+        "descripcion": "Casa con 3 ambientes y 2 baños",
+        "mas_vendido": false,
+        "oferta": false
     },
 
     {
@@ -30,7 +36,9 @@
         "nombre": "Mac Combo4",
         "precio": 800,
         "imagen": "./public/img/foto4.jpg",
-        "descripcion": "fffff gggggg"
+        "descripcion": "fffff gggggg",
+        "mas_vendido": true,
+        "oferta": false
     },
     {
         "id": "5",
@@ -38,7 +46,9 @@
         "nombre": "Pizza Caballito",
         "precio": 1000,
         "imagen": "./public/img/foto6.jpg",
-        "descripcion": "Con huevo"
+        "descripcion": "Con huevo",
+        "mas_vendido": false,
+        "oferta": false
     },
     {
         "id": "6",
@@ -46,7 +56,9 @@
         "nombre": "Pizza Napolitana",
         "precio": 900,
         "imagen": "./public/img/foto7.jpg",
-        "descripcion": "con queso y tomate"
+        "descripcion": "con queso y tomate",
+        "mas_vendido": false,
+        "oferta": false
     },
     {
         "id": "7",
@@ -54,7 +66,9 @@
         "nombre": "Margarita",
         "precio": 950,
         "imagen": "./public/img/foto8.jpg",
-        "descripcion": "con queso y tomate"
+        "descripcion": "con queso y tomate",
+        "mas_vendido": true,
+        "oferta": true
     },
     {
         "id": "8",
@@ -62,15 +76,9 @@
         "nombre": "Especial",
         "precio": 1010,
         "imagen": "./public/img/foto9.jpg",
-        "descripcion": "con queso y tomate"
-    },
-    {
-        "id": "9",
-        "tipo": "pizza",
-        "nombre": "Especial",
-        "precio": 1010,
-        "imagen": "./public/img/foto9.jpg",
-        "descripcion": "con queso y tomate"
+        "descripcion": "con queso y tomate",
+        "mas_vendido": false,
+        "oferta": true
     }
 ]
 
