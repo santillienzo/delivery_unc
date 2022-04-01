@@ -1,13 +1,34 @@
+//Importamos los archivos necesarios
+import {categorias} from './categorias.js'
+
+//Traemos los eventos del html
 const select = document.getElementById('header__select')    //Aquí se almacenará el select del nav
 
+// DECLARACIÓN DE VARIABLES
+//Función para escuchar todos los eventos
 function cargarEscuchaDeEventos(){
-    select.addEventListener("change", (e)=> redirectFilter(e.target.value))
+    //Al cambiar el select ejecutamos redirectCategoria()
+    select.addEventListener("change", (e)=> redirectCategoria(e.target.value))
+}
+
+//Rellenar select con sus options
+const rellenarSelect=()=>{
+    let optionsHtml = ""
+
+    categorias.map(categoria=>{
+        optionsHtml = `
+            <option value="${categoria.id}">${categoria.name}</option>
+        `
+
+        select.innerHTML += optionsHtml
+    })
 }
 
 //Redirigimos al usuario dependiendo de que categoría haya elegido en el select
-const redirectFilter = (categoria)=>{
+const redirectCategoria = (categoria)=>{
     window.location.href = `http://localhost:5500/public/pages/categoria.html?categoria=${categoria}`
 }
 
-
+//ZONA DE EJECUCIÓN
+rellenarSelect()
 cargarEscuchaDeEventos()
