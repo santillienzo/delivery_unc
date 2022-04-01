@@ -1,6 +1,6 @@
 //Importamos las funciones externas que vamos a utilizar
-import {renderizarProductos} from './render.js'
-import {agregarProducto} from './cart.js'
+import {renderizarProductos} from '../render/render.js'
+import {agregarProducto} from '../utils/cart.js'
 
 
 //----------------ZONA DE DEFINICION DE FUNCIONES ---------------

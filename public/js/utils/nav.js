@@ -1,5 +1,5 @@
 //Importamos los archivos necesarios
-import {categorias} from './categorias.js'
+import {categorias} from '../categorias.js'
 
 //Traemos los eventos del html
 const select = document.getElementById('header__select')    //Aquí se almacenará el select del nav

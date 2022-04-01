@@ -1,6 +1,6 @@
 //Realizamos las importaciones
-import { agregarProducto } from "./cart.js";
-import { renderizarUnProducto } from "./render.js";
+import { agregarProducto } from "../utils/cart.js";
+import { renderizarUnProducto } from "../render/render.js";
 
 //window.location.search sirve para ver los pará,etros que trae consigo la url
 const valores = window.location.search;
