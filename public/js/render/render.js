@@ -94,12 +94,14 @@ const renderizarCategoria = async(id_categoria)=>{
     let articuloEnHtml = " ";
     const seccionCategoria = document.getElementById("seccionCategoria"); //Traemos las sección de la categoría
     const titulo = document.getElementById('title-sections') //Traemos el h2 del tiulo de la sección
+    let linksRedirect = document.getElementById("links_redirect");  //Traemos el árbol de redirección del main
 
     //Recorremos las categorías y si el id de la categoría es igual a id_categoria se insertará en el html
     //ese nombre
     categorias.map(categoria=>{
         if (categoria.id === id_categoria) {
             titulo.innerHTML = categoria.name
+            linksRedirect.innerHTML += `<a href="">${categoria.name}</a>`
         }
     })
 

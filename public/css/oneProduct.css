@@ -3,13 +3,6 @@
     margin-top: 15px;
 }
 
-.links_redirect a{
-    color: rgb(104, 127, 233);
-}
-.links_redirect i{
-    color: #aaa;
-}
-
 .product_container{
     display: flex;
     background-color: rgb(241, 247, 247);
