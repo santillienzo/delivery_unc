@@ -1,6 +1,7 @@
-
-/* Los a en blanco y sin el underline*/
 .nav-main  {
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: #ffffff;
     /* Sobre escribe los pixels del body*/
     font-size: 27px;
@@ -11,6 +12,7 @@
     padding: 20px 0;
     align-items: center;
     width: 100%;
+    box-shadow: 0 0 5px 0px #999;
 }
 
 /* BUSCADOR */

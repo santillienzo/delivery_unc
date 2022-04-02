@@ -16,7 +16,7 @@ export const renderBusqueda = async(id_categoria, busqueda)=>{
     // RENDERIZAMOS LOS TÍTULOS
     //Recorremos las categorías y si el id de la categoría es igual a id_categoria se insertará en el html
     //ese nombre
-    if (id_categoria === "null") {
+    if (id_categoria === "all") {
         tituloCategoria.innerHTML = `Categoría | <span>Todo</span>`;
         linksRedirect.innerHTML += `
             <a href="">Todo</a>

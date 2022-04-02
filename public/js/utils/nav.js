@@ -2,9 +2,9 @@
 import {categorias} from '../categorias.js'
 
 //Traemos los elementos del html
-const select = document.getElementById('header__select')    //Aquí se almacenará el select del nav
-const logo = document.querySelector('.nav-brand')
-
+const select = document.getElementById('header__select')    //Aquí se almacena el select del nav
+const logo = document.querySelector('.nav-brand')   //Aquí se almacena el logo
+const form = document.querySelector('.header__form')    //Aquí se almacena el formulario
 
 // DECLARACIÓN DE VARIABLES
 //Función para escuchar todos los eventos
@@ -13,6 +13,32 @@ function cargarEscuchaDeEventos(){
     select.addEventListener("change", (e)=> redirectCategoria(e.target.value))
     //Al hacer click en el logo volvemos al inicio
     logo.addEventListener("click", ()=> window.location.href = "http://localhost:5500")
+}
+
+form.addEventListener("submit", (e)=> enviarFormulario(e))
+
+//Enviamos los parámetros correctos a la url
+const enviarFormulario = (e)=>{
+    e.preventDefault()
+    //window.location.search sirve para ver los pará,etros que trae consigo la url
+    const valores = window.location.search;
+    //Creamos la instancia (objeto con los valores)
+    const urlParams = new URLSearchParams(valores);
+    //Accedemos a los valores de los parámetros
+    let id_categoria = urlParams.get('categoria'); //En que categoría estamos
+    const busqueda = e.target[1].value; //Que ingresó el usuario
+
+    //Si la busqueda está vacía no hacemos nada
+    if (busqueda === "") {
+        return
+    }
+
+    //Si no estamos posicionados en ningúna categoría enviamos 'all' para que se muestren todos los productos
+    if (id_categoria == null || id_categoria === "null" || id_categoria === "mas_vendido" || id_categoria === "oferta") {
+        id_categoria = "all"
+    }
+
+    window.location.href = `http://localhost:5500//public/pages/search.html?categoria=${id_categoria}&search=${busqueda}`
 }
 
 //Rellenar select con sus options
@@ -40,22 +66,6 @@ cargarEscuchaDeEventos()
 
 
 // PRUEBA
+//
 
-const form = document.querySelector('.header__form')
 
-form.addEventListener("submit", (e)=>{
-    e.preventDefault()
-    //window.location.search sirve para ver los pará,etros que trae consigo la url
-    const valores = window.location.search;
-    //Creamos la instancia (objeto con los valores)
-    const urlParams = new URLSearchParams(valores);
-    //Accedemos a los valores get de la id del producto
-    let id_categoria = urlParams.get('categoria');
-    const busqueda = e.target[1].value;
-
-    if (id_categoria == null || id_categoria === "null" || id_categoria === "mas_vendido" || id_categoria === "oferta") {
-        id_categoria = "null"
-    }
-
-    window.location.href = `http://localhost:5500//public/pages/search.html?categoria=${id_categoria}&search=${busqueda}`
-})
