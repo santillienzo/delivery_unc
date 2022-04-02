@@ -1,0 +1,15 @@
+.search_main{
+    margin-bottom: 40px;
+    margin-top: 15px;
+}
+
+.title-sections span{
+    font-weight: 500;
+}
+
+.search_text{
+    margin: 15px 0;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: capitalize;
+}
