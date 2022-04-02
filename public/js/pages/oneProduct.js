@@ -1,6 +1,6 @@
 //Realizamos las importaciones
 import { agregarProducto } from "../utils/cart.js";
-import { renderizarUnProducto } from "../render/render.js";
+import {renderUnProducto} from '../render/renderUnProducto.js'
 
 //window.location.search sirve para ver los pará,etros que trae consigo la url
 const valores = window.location.search;
@@ -16,5 +16,5 @@ function cargarEscuchaDeEventos() {
 }
 
 // Ejecución de funciones
-await renderizarUnProducto(id_producto)
+await renderUnProducto(id_producto)
 cargarEscuchaDeEventos()

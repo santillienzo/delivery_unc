@@ -1,4 +1,4 @@
-import { renderizarBusqueda } from "../render/render.js";
+import {renderBusqueda} from '../render/renderBusqueda.js'
 
 //window.location.search sirve para ver los pará,etros que trae consigo la url
 const valores = window.location.search;
@@ -11,4 +11,4 @@ const busqueda = urlParams.get('search');
 console.log(id_categoria)
 console.log(busqueda)
 
-renderizarBusqueda(id_categoria, busqueda)
+renderBusqueda(id_categoria, busqueda)

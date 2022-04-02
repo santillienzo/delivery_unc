@@ -1,4 +1,4 @@
-import { renderizarCategoria } from "../render/render.js";
+import {renderCategoria} from '../render/renderCategoria.js'
 import { agregarProducto } from "../utils/cart.js";
 
 //window.location.search sirve para ver los pará,etros que trae consigo la url
@@ -21,5 +21,5 @@ function cargarEscuchaDeEventos() {
 }
 
 //----------------ZONA DE EJECUCIÓN DE FUNCIONES ---------------
-await renderizarCategoria(id_categoria)
+await renderCategoria(id_categoria)
 cargarEscuchaDeEventos()

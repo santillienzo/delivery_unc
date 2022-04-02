@@ -1,5 +1,5 @@
 //Importamos las funciones externas que vamos a utilizar
-import {renderizarProductos} from '../render/render.js'
+import {renderProductos} from '../render/renderProductos.js'
 import {agregarProducto} from '../utils/cart.js'
 
 
@@ -16,5 +16,5 @@ function cargarEscuchaDeEventos() {
 }
 
 //----------------ZONA DE EJECUCIÓN DE FUNCIONES ---------------
-await renderizarProductos();
+await renderProductos();
 cargarEscuchaDeEventos()
