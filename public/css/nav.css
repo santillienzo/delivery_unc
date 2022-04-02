@@ -78,6 +78,7 @@
 .nav-brand {
     background-color: chocolate;
     height: 90px;
+    cursor: pointer;
 }
 
 /* Se cre un flex para que las LI estén horizontales*/
