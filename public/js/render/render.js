@@ -1,5 +1,6 @@
 //Importamos los datos necesarios
 import { categorias } from "../categorias.js"; 
+import { renderArticulo } from "../components/renderArticulo.js";
 
 //Llamamos los datos de nuestro archivo 'datos.json'
 //Renderizamos todos los productos del archivo dividiendolo por secciones
@@ -15,24 +16,7 @@ const renderizarProductos = async()=>{
 
     //Recorremos los datos convertidos
     data.forEach((producto) => {
-        articuloEnHtml = `
-        <article class="articulo">
-            <div class="articulo_img_container">
-                <img class="card-foto" src="${producto.imagen}" alt="" />
-            </div>
-            <h3 class="name">${producto.nombre}</h3>
-            <h2 class="price">${producto.precio}</h2>
-            <p class="description"> ${producto.descripcion}</p>
-            <div class="footer-card">
-                <a 
-                    class="vinculo" 
-                    href="public/pages/product.html?producto=${producto.id}"
-                >Ver Más<i class="fas fa-angle-double-right"></i></a>
-                <i class="fas fa-shopping-cart agregar_carrito" id-item=${producto.id}></i>
-                <i id="corazon" class="fas fa-heart"></i>
-            </div>
-        </article>
-        `;
+        articuloEnHtml = renderArticulo(producto)
     
       //Si el artículo tiene como status venta lo colocamos en la sección articuloVenta
         if (producto.oferta) {
@@ -52,8 +36,6 @@ const renderizarUnProducto = async(id)=>{
     let articuloEnHtml = " ";
     let productContainer = document.getElementById("product_container");
     let linksRedirect = document.getElementById("links_redirect");
-
-    
 
     return fetch("../../datos.json")
             .then(res=>{
@@ -110,24 +92,7 @@ const renderizarCategoria = async(id_categoria)=>{
 
     //Recorremos los datos convertidos
     data.forEach((producto) => {
-        articuloEnHtml = `
-        <article class="articulo">
-            <div class="articulo_img_container">
-                <img class="card-foto" src="../../${producto.imagen}" alt="" />
-            </div>
-            <h3 class="name">${producto.nombre}</h3>
-            <h2 class="price">${producto.precio}</h2>
-            <p class="description"> ${producto.descripcion}</p>
-            <div class="footer-card">
-                <a 
-                    class="vinculo" 
-                    href="http://localhost:5500/public/pages/product.html?producto=${producto.id}"
-                >Ver Más<i class="fas fa-angle-double-right"></i></a>
-                <i class="fas fa-shopping-cart agregar_carrito" id-item=${producto.id}></i>
-                <i id="corazon" class="fas fa-heart"></i>
-            </div>
-        </article>
-        `;
+        articuloEnHtml = renderArticulo(producto)
 
         if (producto.tipo === id_categoria) {
             seccionCategoria.innerHTML += articuloEnHtml
@@ -136,14 +101,17 @@ const renderizarCategoria = async(id_categoria)=>{
 }
 
 const renderizarBusqueda = async(id_categoria, busqueda)=>{
-    let articuloEnHtml = " ";
+    let articuloEnHtml = " "; //Este será el html del producto
     const seccionBusqueda = document.getElementById("seccionBusqueda"); //Traemos las sección de la busqueda
     const tituloCategoria = document.getElementById('title-sections'); //Traemos el h2 donde mostramos la categoría en donde está el usuario
     const textoBusqueda = document.getElementById('search_text'); //Traemos el h4 donde se mostrará el texto que escribió el usuario
     let linksRedirect = document.getElementById("links_redirect");  //Traemos el árbol de redirección del main
     
+    //Pasamos a minúsculas lo que recibimos en el parámetro de la búsqueda.
+    //Esto sirve para agilizar las validaciones
     busqueda = busqueda.toLowerCase()
 
+    // RENDERIZAMOS LOS TÍTULOS
     //Recorremos las categorías y si el id de la categoría es igual a id_categoria se insertará en el html
     //ese nombre
     if (id_categoria === "null") {
@@ -176,24 +144,8 @@ const renderizarBusqueda = async(id_categoria, busqueda)=>{
     data.forEach((producto) => {
         let nombre = producto.nombre.toLowerCase()
 
-        articuloEnHtml = `
-        <article class="articulo">
-            <div class="articulo_img_container">
-                <img class="card-foto" src="../../${producto.imagen}" alt="" />
-            </div>
-            <h3 class="name">${producto.nombre}</h3>
-            <h2 class="price">${producto.precio}</h2>
-            <p class="description"> ${producto.descripcion}</p>
-            <div class="footer-card">
-                <a 
-                    class="vinculo" 
-                    href="http://localhost:5500/public/pages/product.html?producto=${producto.id}"
-                >Ver Más<i class="fas fa-angle-double-right"></i></a>
-                <i class="fas fa-shopping-cart agregar_carrito" id-item=${producto.id}></i>
-                <i id="corazon" class="fas fa-heart"></i>
-            </div>
-        </article>
-        `;
+        articuloEnHtml = renderArticulo(producto)
+        
         if (id_categoria === "null") {
             if (nombre.indexOf(busqueda) !== -1) {
                 seccionBusqueda.innerHTML += articuloEnHtml
