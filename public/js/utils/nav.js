@@ -37,3 +37,25 @@ const redirectCategoria = (categoria)=>{
 //ZONA DE EJECUCIÓN
 rellenarSelect()
 cargarEscuchaDeEventos()
+
+
+// PRUEBA
+
+const form = document.querySelector('.header__form')
+
+form.addEventListener("submit", (e)=>{
+    e.preventDefault()
+    //window.location.search sirve para ver los pará,etros que trae consigo la url
+    const valores = window.location.search;
+    //Creamos la instancia (objeto con los valores)
+    const urlParams = new URLSearchParams(valores);
+    //Accedemos a los valores get de la id del producto
+    let id_categoria = urlParams.get('categoria');
+    const busqueda = e.target[1].value;
+
+    if (id_categoria == null || id_categoria === "null" || id_categoria === "mas_vendido" || id_categoria === "oferta") {
+        id_categoria = "null"
+    }
+
+    window.location.href = `http://localhost:5500//public/pages/search.html?categoria=${id_categoria}&search=${busqueda}`
+})

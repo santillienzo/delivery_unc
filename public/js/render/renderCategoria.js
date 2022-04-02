@@ -13,7 +13,6 @@ import { categorias } from "../categorias.js";
 import { renderArticulo } from "../components/renderArticulo.js";
 
 export const renderCategoria = async(id_categoria)=>{
-    console.log(id_categoria)
     let articuloEnHtml = " ";
     const seccionCategoria = document.getElementById("seccionCategoria"); //Traemos las sección de la categoría
     const seccionOfertas= document.getElementById("seccionOfertas"); //Traemos las sección de la categoría

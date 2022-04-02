@@ -8,7 +8,8 @@ const urlParams = new URLSearchParams(valores);
 const id_categoria = urlParams.get('categoria');
 const busqueda = urlParams.get('search');
 
-console.log(id_categoria)
-console.log(busqueda)
+const textField = document.querySelector('.input__search')
+
+textField.value = busqueda
 
 renderBusqueda(id_categoria, busqueda)

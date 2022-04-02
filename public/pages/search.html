@@ -31,7 +31,7 @@
             <!-- Right Nav -->
             <ul class="nav-main-busqueda">
                 <li>
-                    <form action="/public/pages/search.html" method="GET" class="header__form">
+                    <form class="header__form">
                         <select name="categoria" class="header__select" id="header__select">
                             <option value="null">Categoría</option>
                             <option value="mas_vendido">Más vendidos</option>
@@ -39,7 +39,7 @@
                             <!-- Aquí se rellenan las categorías -->
                         </select>
                         <input required type="text" name="search" class="input__search" placeholder="Buscar productos" />
-                        <button type="button" class="header__lupa">
+                        <button type="submit" class="header__lupa">
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
