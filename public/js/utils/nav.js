@@ -17,22 +17,13 @@ function cargarEscuchaDeEventos(){
 
 //Rellenar select con sus options
 const rellenarSelect=()=>{
-    let optionsHtml = ""    //Aquí se guardará el html
-    //window.location.search sirve para ver los pará,etros que trae consigo la url
-    const valores = window.location.search;
-    //Creamos la instancia (objeto con los valores)
-    const urlParams = new URLSearchParams(valores);
-    //Accedemos a los valores get de la categoria
-    //Esto lo hacemos para saber donde estamos parados, y manejar las selecciones por defecto de los <options></options>
-    const id_categoria = urlParams.get('categoria');
-    
+    let optionsHtml = ""    //Aquí se guardará el html    
 
     //Recorremos las categorías y rellenamos dinámicamente el select con los options
     categorias.map(categoria=>{
         optionsHtml = `
             <option value="${categoria.id}">${categoria.name}</option>
         `
-
         //Insertamos la opción en el select
         select.innerHTML += optionsHtml
     })
