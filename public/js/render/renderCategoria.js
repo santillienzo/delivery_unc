@@ -1,8 +1,19 @@
+//#IMPORTANTE
+//#IMPORTANTE
+//#IMPORTANTE
+
+//ESTE CÓDIGO TIENE QUE SER REFACTORIZADO
+
+//#IMPORTANTE
+//#IMPORTANTE
+//#IMPORTANTE
+
 //Importamos los datos necesarios
 import { categorias } from "../categorias.js"; 
 import { renderArticulo } from "../components/renderArticulo.js";
 
 export const renderCategoria = async(id_categoria)=>{
+    console.log(id_categoria)
     let articuloEnHtml = " ";
     const seccionCategoria = document.getElementById("seccionCategoria"); //Traemos las sección de la categoría
     const seccionOfertas= document.getElementById("seccionOfertas"); //Traemos las sección de la categoría
@@ -13,32 +24,75 @@ export const renderCategoria = async(id_categoria)=>{
     const tituloMasVendido = document.getElementById('title-mas_vendido')
     let linksRedirect = document.getElementById("links_redirect");  //Traemos el árbol de redirección del main
 
-    //Recorremos las categorías y si el id de la categoría es igual a id_categoria se insertará en el html
-    //ese nombre
-    categorias.map(categoria=>{
-        if (categoria.id === id_categoria) {
-            titulo.innerHTML = `Categoría | <span> ${categoria.name}</span>`
-            tituloOfertas.innerHTML = `Ofertas en ${categoria.name}`
-            tituloMasVendido.innerHTML = `${categoria.name} más vendidas`
-            linksRedirect.innerHTML += `<a href="">${categoria.name}</a>`
-        }
-    })
+    if (id_categoria === "mas_vendido") {
+        seccionCategoria.style.display = "none"
+        seccionOfertas.style.display = "none"
+        titulo.style.display = "none"
+        tituloOfertas.style.display = "none"
 
-    const res = await fetch("../../datos.json") //Pedimos los datos a la api
-    const data = await res.json() //Convertimos esos datos en archivo javaScript
+        linksRedirect.innerHTML += `<a href="">Más vendido</a>`
 
-    //Recorremos los datos convertidos
-    data.forEach((producto) => {
-        articuloEnHtml = renderArticulo(producto)
+        tituloMasVendido.innerHTML = "Más vendidos"
 
-        if (producto.tipo === id_categoria) {
-            if (producto.oferta) {
-                seccionOfertas.innerHTML += articuloEnHtml;
-            } 
+        const res = await fetch("../../datos.json") //Pedimos los datos a la api
+        const data = await res.json() //Convertimos esos datos en archivo javaScript
+    
+        //Recorremos los datos convertidos
+        data.forEach((producto) => {
+            articuloEnHtml = renderArticulo(producto)
             if(producto.mas_vendido){
                 seccionMasVendidos.innerHTML += articuloEnHtml;
             }
-            seccionCategoria.innerHTML += articuloEnHtml
-        }
-    })
+        })
+    }else if(id_categoria === "ofertas"){
+        seccionCategoria.style.display = "none"
+        seccionMasVendidos.style.display = "none"
+        titulo.style.display = "none"
+        tituloMasVendido.style.display = "none"
+
+        linksRedirect.innerHTML += `<a href="">Ofertas</a>`
+
+        tituloOfertas.innerHTML = "Ofertas"
+
+        const res = await fetch("../../datos.json") //Pedimos los datos a la api
+        const data = await res.json() //Convertimos esos datos en archivo javaScript
+    
+        //Recorremos los datos convertidos
+        data.forEach((producto) => {
+            articuloEnHtml = renderArticulo(producto)
+            if (producto.oferta) {
+                console.log(producto)
+                seccionOfertas.innerHTML += articuloEnHtml;
+            } 
+        })
+    }else{
+        //Recorremos las categorías y si el id de la categoría es igual a id_categoria se insertará en el html
+        //ese nombre
+        categorias.map(categoria=>{
+            if (categoria.id === id_categoria) {
+                titulo.innerHTML = `Categoría | <span> ${categoria.name}</span>`
+                tituloOfertas.innerHTML = `Ofertas en ${categoria.name}`
+                tituloMasVendido.innerHTML = `${categoria.name} más vendidas`
+                linksRedirect.innerHTML += `<a href="">${categoria.name}</a>`
+            }
+        })
+    
+        const res = await fetch("../../datos.json") //Pedimos los datos a la api
+        const data = await res.json() //Convertimos esos datos en archivo javaScript
+    
+        //Recorremos los datos convertidos
+        data.forEach((producto) => {
+            articuloEnHtml = renderArticulo(producto)
+    
+            if (producto.tipo === id_categoria) {
+                if (producto.oferta) {
+                    seccionOfertas.innerHTML += articuloEnHtml;
+                } 
+                if(producto.mas_vendido){
+                    seccionMasVendidos.innerHTML += articuloEnHtml;
+                }
+                seccionCategoria.innerHTML += articuloEnHtml
+            }
+        })
+    }
 }
