@@ -5,7 +5,8 @@ window.addEventListener('load', function() {
     arrows: {
       prev: '.carrousel__anterior',
       next: '.carrousel__siguiente'
-    }
+    },
+    rewind: true
   })
 })
 

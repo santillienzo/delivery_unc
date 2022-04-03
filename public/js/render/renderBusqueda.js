@@ -8,6 +8,7 @@ export const renderBusqueda = async(id_categoria, busqueda)=>{
     const tituloCategoria = document.getElementById('title-sections'); //Traemos el h2 donde mostramos la categoría en donde está el usuario
     const textoBusqueda = document.getElementById('search_text'); //Traemos el h4 donde se mostrará el texto que escribió el usuario
     let linksRedirect = document.getElementById("links_redirect");  //Traemos el árbol de redirección del main
+    let contador = 0
     
     //Pasamos a minúsculas lo que recibimos en el parámetro de la búsqueda.
     //Esto sirve para agilizar las validaciones
@@ -50,12 +51,30 @@ export const renderBusqueda = async(id_categoria, busqueda)=>{
         
         if (id_categoria === "all") {
             if (nombre.indexOf(busqueda) !== -1) {
+                contador++
                 seccionBusqueda.innerHTML += articuloEnHtml
             }
         }else{
             if (nombre.indexOf(busqueda) !== -1 && producto.tipo === id_categoria) {
                 seccionBusqueda.innerHTML += articuloEnHtml
+                contador++
             }
         }
+
     })
+
+    //Si no se encontró ningún producto:
+    if (contador === 0) {
+        seccionBusqueda.classList.remove('news-cards')  //Removemos la clase de la sección (para quitar estilos)
+        seccionBusqueda.classList.add('empty_search')   //Agregamos la clase 'empty_search' (agregar nuevos estilos)
+        //Adjuntamos el siguiente código HTML a la sección
+        seccionBusqueda.innerHTML = `
+            <p>Lo siento, no hay artículos que coincidan con tu búsqueda.</p>
+            <ul>
+                <li>Revisa la ortografía de la palabra</li>
+                <li>Utilizá palabras más genéricas o menos palabras.</li>
+                <li>Navegá por las categorías para encontrar un producto similar</li>
+            </ul>
+        `
+    }
 }
