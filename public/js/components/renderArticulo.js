@@ -5,7 +5,7 @@ export const renderArticulo = (producto)=>{
             <img class="card-foto" src="../../${producto.imagen}" alt="" />
         </div>
         <h3 class="name">${producto.nombre}</h3>
-        <h2 class="price">${producto.precio}</h2>
+        <h2 class="price">$${producto.precio}</h2>
         <p class="description"> ${producto.descripcion}</p>
         <div class="footer-card">
             <a 

@@ -1,3 +1,14 @@
+window.addEventListener('load', function() {
+  new Glider(document.querySelector('.carrousel__lista'),{
+    slidesToShow: 1,
+    dots: '.carrousel__indicadores',
+    arrows: {
+      prev: '.carrousel__anterior',
+      next: '.carrousel__siguiente'
+    }
+  })
+})
+
 //Importamos las funciones externas que vamos a utilizar
 import {renderProductos} from '../render/renderProductos.js'
 import {agregarProducto} from '../utils/cart.js'

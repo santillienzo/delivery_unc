@@ -13,7 +13,8 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/af9ea1f796.js" crossorigin="anonymous"></script>
+    <!-- GliderJS css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
 
     <!-- Estilos globales -->
     <link rel="stylesheet" href="./public/css/styles.css" />
@@ -96,7 +97,29 @@
       </nav>
     </header>
     <div class="container">
-      
+      <!-- Aquí se renderizará el carrousel -->
+      <div class="carrousel">
+        <div class="carrousel__conteiner">
+          <button aria-label="Anterior" class="carrousel__anterior"><i class="fa-solid fa-chevron-left"></i></button>
+
+          <div class="carrousel__lista">
+            <div class="carrousel__elemento">
+              <img src="./public/img/slider/banner1.jpeg" alt="oferta 1">
+            </div>
+            <div class="carrousel__elemento">
+              <img src="./public/img/slider/banner2.jpeg" alt="oferta 1">
+            </div>
+            <div class="carrousel__elemento">
+              <img src="./public/img/slider/banner1.jpeg" alt="oferta 1">
+            </div>
+          </div>
+
+          <button aria-label="Siguiente" class="carrousel__siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="carrousel__indicadores" role="tablist"></div>
+      </div>
+
       <main>
         <!-- NEWS CARDS -->
         <h2 class="title-sections">Más vendidos</h2>
@@ -163,5 +186,9 @@
   <script type="module" src="./public/js/pages/main.js"></script>
   <script type="module" src="./public/js/utils/nav.js"></script>
   <script type="module" src="./public/js/utils/cart.js"></script>
+  <!-- Librería GliderJS -->
+  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+  <!-- Librería FontAwesome -->
+  <script src="https://kit.fontawesome.com/af9ea1f796.js" crossorigin="anonymous"></script>
   </body>
 </html>
