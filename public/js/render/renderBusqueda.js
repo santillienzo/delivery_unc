@@ -48,7 +48,7 @@ export const renderBusqueda = async(id_categoria, busqueda)=>{
 
         articuloEnHtml = renderArticulo(producto)
         
-        if (id_categoria === "null") {
+        if (id_categoria === "all") {
             if (nombre.indexOf(busqueda) !== -1) {
                 seccionBusqueda.innerHTML += articuloEnHtml
             }
