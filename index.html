@@ -70,27 +70,33 @@
         <!-- ACA SE INYECTA DINAMICAMENTE carro -->
         <div class="carrito__container" id="carrito__container">
           <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
-          <table class="table-carrito table-dark table-hover">
-            <caption>Mi carrito</caption>
-            <thead>
-              <tr class="text-primary">
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody class="tbody" id="tbody">
-            </tbody>
-          </table>
-          <div class="total_container">
-            <div class="col">
-              <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
+          <div id="table_container">
+            <table class="table-carrito table-dark table-hover">
+              <caption class="title-cart">Mi carrito</caption>
+              <thead>
+                <tr class="text-primary">
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="tbody" id="tbody">
+              </tbody>
+            </table>
+            <div class="total_container">
+              <div class="col">
+                <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
+              </div>
+              <div class="">
+                <button class="btn-salir btn" id="btn_salir_carrito">SALIR</button>
+                <button class="btn-comprar btn">COMPRAR</button>
+              </div>
             </div>
-            <div class="">
-              <button class="btn-salir btn" id="btn_salir_carrito">SALIR</button>
-              <button class="btn-comprar btn">COMPRAR</button>
-            </div>
+          </div>
+          <div class="empty_cart" id="empty_cart">
+            <p class="title-cart">Mi carrito</p>
+            <p>Tu carrito está vacio</p>
           </div>
         </div>
         <!-- fin carro -->

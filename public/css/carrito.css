@@ -1,6 +1,7 @@
 /* CARRITO */
 .carrito__container{
   position: absolute;
+  min-width: 275px;
   top: 70px;
   right: 0;
   background-color: #fff;
@@ -28,7 +29,11 @@
   cursor: pointer;
 }
 
-.table-carrito caption{
+.empty_cart{
+  /* margin-top: calc(1rem + 5px); */
+}
+
+.title-cart{
   font-weight: 500;
   margin-bottom: 5px;
 }

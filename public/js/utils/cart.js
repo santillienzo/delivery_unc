@@ -1,3 +1,15 @@
+//#IMPORTANTE
+//#IMPORTANTE
+//#IMPORTANTE
+
+
+//ESTE CÓDIGO TIENE QUE SER REFACTORIZADO
+
+//#IMPORTANTE
+//#IMPORTANTE
+//#IMPORTANTE
+import { renderCarrito, renderCarritoVacio } from "../render/renderCarrito.js"
+
 // Atrapo el ícono del carrito y el carrito en sí
 const carrito_icono = document.getElementById('carrito_icon')
 const carrito_container = document.getElementById('carrito__container')
@@ -102,7 +114,7 @@ function agregarProducto(productoSeleccionado){
     //Añadimos el array al localStorage
     localStorage.setItem("carritoClave", JSON.stringify(carrito));
 
-    renderCarrito()
+    renderCarrito(tbody, carrito, priceTotal, _priceTotal, countCart, _countCart)
 }
 
 function actualizarProducto(e) {
@@ -128,7 +140,7 @@ function actualizarProducto(e) {
         })
         localStorage.setItem("carritoClave", JSON.stringify(carrito));
     }
-    renderCarrito()
+    renderCarrito(tbody, carrito, priceTotal, _priceTotal, countCart, _countCart)
 }
 
 function eliminarProducto(e) {
@@ -152,30 +164,7 @@ function eliminarProducto(e) {
         localStorage.setItem("carritoClave", JSON.stringify(carrito));
     }
 
-    renderCarrito()
-}
-
-//Renderizamos el carrito
-function renderCarrito() {
-    tbody.innerHTML=' '
-
-    carrito.forEach(producto=>{
-        const tr = document.createElement("tr");
-        const {id, nombre, precio, cantidad} = producto;
-        const fila = `
-            <td class="table-zona">${nombre}</td>
-            <td class="table-precio">$${precio}</td>
-            <td class="table-cantidad">
-            <input type="number" min = "1" value=${cantidad} min="0" max="100" class="amount_input" data-id=${id}>
-            </td> 
-            <button class="eliminar-item" data-id=${id}> Eliminar</button>
-        `;
-        tr.innerHTML = fila;
-        tbody.append(tr);
-    })
-
-    priceTotal.innerHTML = _priceTotal
-    countCart.innerHTML = _countCart
+    renderCarrito(tbody, carrito, priceTotal, _priceTotal, countCart, _countCart)
 }
 
 //Si existe el carrito en el LocalStorage: 
@@ -191,7 +180,9 @@ if (localStorage.getItem("carritoClave")) {
         _countCart = _countCart + product.cantidad
     })
     
-    renderCarrito()
+    renderCarrito(tbody, carrito, priceTotal, _priceTotal, countCart, _countCart)
+}else{
+    renderCarritoVacio()
 }
 
 //Ejecución de funciones
