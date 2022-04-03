@@ -19,7 +19,7 @@ export const renderBusqueda = async(id_categoria, busqueda)=>{
     if (id_categoria === "all") {
         tituloCategoria.innerHTML = `Categoría | <span>Todo</span>`;
         linksRedirect.innerHTML += `
-            <a href="">Todo</a>
+            <a href="http://localhost:5500">Todo</a>
             <i class="fa-solid fa-angle-right"></i>
             <a href="">${busqueda}</a>
         `;
@@ -28,7 +28,7 @@ export const renderBusqueda = async(id_categoria, busqueda)=>{
             if (categoria.id === id_categoria) {
                 tituloCategoria.innerHTML = `Categoría | <span> ${categoria.name}</span>`;
                 linksRedirect.innerHTML += `
-                    <a href="">${categoria.name}</a>
+                    <a href="http://localhost:5500/public/pages/categoria.html?categoria=${categoria.id}">${categoria.name}</a>
                     <i class="fa-solid fa-angle-right"></i>
                     <a href="">${busqueda}</a>
                 `;
