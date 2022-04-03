@@ -1,0 +1,57 @@
+
+/*====== Fonts ======*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+
+
+/*====== Variables ======*/
+:root {
+  --yellow: #EAC926;
+  --dark-blue: #03264C;
+  --light-blue: #1259c3;
+  --gray: #666666;
+  --light-gray: #ebebeb;
+  --green: #39b54a;
+  --base-font-family: 'Roboto', sans-serif
+}
+
+
+
+/* Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--base-font-family);
+  font-weight: 300;
+  background-color: var(--light-gray);
+}
+
+ul {
+
+  list-style:none;
+}
+
+a {
+  color: rgba(15, 15, 15, 0.904);
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 2px solid rgb(182, 178, 178);
+}
+
+
+/* Para que ocupe el 90 por ciento de la pantalla y centrado su contenido*/
+.container {
+  width: 90%;
+  margin: auto;
+  margin-top: 120px;
+}
+
+.links_redirect a{
+  color: rgb(104, 127, 233);
+}
+.links_redirect i{
+  color: #aaa;
+}

@@ -1,0 +1,84 @@
+[
+    {
+        "id": "1",
+        "tipo": "hamburguesa",
+        "nombre": "Mac Combo1",
+        "precio": 600,
+        "imagen": "./public/img/foto1.jpg",
+        "descripcion": "Hamburguesa completa",
+        "mas_vendido": false,
+        "oferta": true
+    },
+    {
+        "id": "2",
+        "tipo": "hamburguesa",
+        "nombre": "Mac Combo2",
+        "precio": 650,
+        "imagen": "./public/img/foto2.jpg",
+        "descripcion": "Hamburguesa completa",
+        "mas_vendido": true,
+        "oferta": true
+    },
+    {
+        "id": "3",
+        "tipo": "hamburguesa",
+        "nombre": "Mac Combo3",
+        "precio": 700,
+        "imagen": "./public/img/foto3.jpg",
+        "descripcion": "Casa con 3 ambientes y 2 baños",
+        "mas_vendido": false,
+        "oferta": false
+    },
+
+    {
+        "id": "4",
+        "tipo": "hamburguesa",
+        "nombre": "Mac Combo4",
+        "precio": 800,
+        "imagen": "./public/img/foto4.jpg",
+        "descripcion": "fffff gggggg",
+        "mas_vendido": true,
+        "oferta": false
+    },
+    {
+        "id": "5",
+        "tipo": "pizza",
+        "nombre": "Pizza Caballito",
+        "precio": 1000,
+        "imagen": "./public/img/foto6.jpg",
+        "descripcion": "Con huevo",
+        "mas_vendido": false,
+        "oferta": false
+    },
+    {
+        "id": "6",
+        "tipo": "pizza",
+        "nombre": "Pizza Napolitana",
+        "precio": 900,
+        "imagen": "./public/img/foto7.jpg",
+        "descripcion": "con queso y tomate",
+        "mas_vendido": false,
+        "oferta": false
+    },
+    {
+        "id": "7",
+        "tipo": "pizza",
+        "nombre": "Margarita",
+        "precio": 950,
+        "imagen": "./public/img/foto8.jpg",
+        "descripcion": "con queso y tomate",
+        "mas_vendido": true,
+        "oferta": true
+    },
+    {
+        "id": "8",
+        "tipo": "pizza",
+        "nombre": "Especial",
+        "precio": 1010,
+        "imagen": "./public/img/foto9.jpg",
+        "descripcion": "con queso y tomate",
+        "mas_vendido": false,
+        "oferta": true
+    }
+]
+

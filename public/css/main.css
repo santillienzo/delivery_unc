@@ -1,0 +1,110 @@
+/* Carrusel */
+.carrousel__conteiner{
+    position: relative;
+}
+
+.carrousel__anterior,
+.carrousel__siguiente{
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: none;
+    top: calc(50% - 35px);
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.397);
+    color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    left: 15px;
+}   
+.carrousel__siguiente{
+    left: auto;
+    right: 15px;
+}
+
+
+/* SECCIONES */
+.title-sections {
+    margin-top: 20px;
+}
+
+/* ------------------------------*/
+.news-cards {
+    display: grid;
+    background-color: rgb(241, 247, 247);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding: 15px;
+}
+
+/* --------------para el Detail---------*/
+.cajaDetail {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cajaPie {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.news-cards article {
+
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.news-cards img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.news-cards h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.vinculo {
+    padding: 10px 0;
+    color: #5af114;
+    text-transform: uppercase;
+
+    font-weight: bold;
+}
+
+.articulo {
+    padding: 10px;
+}
+
+.footer-card {
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.articulo:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+
+i.fa-shopping-cart:hover {
+    color: #e0218a;
+    transition-property: all;
+    transition-duration: 200ms;
+}
+
+
+i.fa-heart:hover {
+    color: rgb(243, 44, 44);
+    transition-property: all;
+    transition-duration: 200ms;
+}
