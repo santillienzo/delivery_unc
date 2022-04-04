@@ -12,7 +12,7 @@ function cargarEscuchaDeEventos(){
     //Al cambiar el select ejecutamos redirectCategoria()
     select.addEventListener("change", (e)=> redirectCategoria(e.target.value))
     //Al hacer click en el logo volvemos al inicio
-    logo.addEventListener("click", ()=> window.location.href = "http://localhost:5500")
+    logo.addEventListener("click", ()=> window.location.href = `http://${location.host}`)
 }
 
 form.addEventListener("submit", (e)=> enviarFormulario(e))
@@ -38,7 +38,7 @@ const enviarFormulario = (e)=>{
         id_categoria = "all"
     }
 
-    window.location.href = `http://localhost:5500/view/search.html?categoria=${id_categoria}&search=${busqueda}`
+    window.location.href = `http://${location.host}/view/search.html?categoria=${id_categoria}&search=${busqueda}`
 }
 
 //Rellenar select con sus options
@@ -57,7 +57,7 @@ const rellenarSelect=()=>{
 
 //Redirigimos al usuario dependiendo de que categoría haya elegido en el select
 const redirectCategoria = (categoria)=>{
-    window.location.href = `http://localhost:5500/view/categoria.html?categoria=${categoria}`
+    window.location.href = `http://${location.host}/view/categoria.html?categoria=${categoria}`
 }
 
 //ZONA DE EJECUCIÓN

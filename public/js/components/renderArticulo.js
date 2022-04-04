@@ -10,7 +10,7 @@ export const renderArticulo = (producto)=>{
         <div class="footer-card">
             <a 
                 class="vinculo" 
-                href="http://localhost:5500/view/product.html?producto=${producto.id}"
+                href="http://${location.host}/view/product.html?producto=${producto.id}"
             >Ver Más<i class="fas fa-angle-double-right"></i></a>
             <i class="fas fa-shopping-cart agregar_carrito" id-item=${producto.id}></i>
             <i id="corazon" class="fas fa-heart"></i>
