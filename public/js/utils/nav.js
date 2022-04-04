@@ -13,6 +13,7 @@ function cargarEscuchaDeEventos(){
     select.addEventListener("change", (e)=> redirectCategoria(e.target.value))
     //Al hacer click en el logo volvemos al inicio
     logo.addEventListener("click", ()=> window.location.href = `http://${location.host}`)
+
 }
 
 form.addEventListener("submit", (e)=> enviarFormulario(e))
@@ -34,11 +35,12 @@ const enviarFormulario = (e)=>{
     }
 
     //Si no estamos posicionados en ningúna categoría enviamos 'all' para que se muestren todos los productos
-    if (id_categoria == null || id_categoria === "null" || id_categoria === "mas_vendido" || id_categoria === "oferta") {
+    if (id_categoria == null || id_categoria === "null" || id_categoria === "mas_vendido" || id_categoria === "ofertas") {
         id_categoria = "all"
     }
 
     window.location.href = `http://${location.host}/view/search.html?categoria=${id_categoria}&search=${busqueda}`
+    
 }
 
 //Rellenar select con sus options
