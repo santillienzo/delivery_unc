@@ -37,7 +37,7 @@
           <li>
             <form class="header__form">
               <select name="categoria" class="header__select" id="header__select">
-                <option value="null">Categoría</option>
+                <option value="all">Todo</option>
                 <option value="mas_vendido">Más vendidos</option>
                 <option value="ofertas">Ofertas</option>
                 <!-- Aquí se rellenan las categorías -->
@@ -130,21 +130,34 @@
       <main>
         <!-- NEWS CARDS -->
         <h2 class="title-sections">Más vendidos</h2>
-
-        <section class="news-cards" id="seccionMasVendido">
-            
-        <!-- ACA SE INYECTA DINAMICAMENTE DEL ARRAY -->
-
-        </section>
-
+        <div class="sliderSection">
+          <div class="sliderSectionContainer">
+            <button aria-label="Anterior" class="sliderAnterior" id="MasVendidoAnterior"><i class="fa-solid fa-chevron-left"></i></button>
+            <section class="sliderSeccionList" id="seccionMasVendido">
+              <!-- ACA SE INYECTA DINAMICAMENTE DEL ARRAY -->
+            </section>
+            <button aria-label="Siguiente" class="sliderSiguiente" id="MasVendidoSiguiente"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <div class="sliderIndicadores" id="MasVendidosIndicadores" role="tablist"></div>
+        </div>
+        
         <hr>
+
         <h2 class="title-sections">Ofertas</h2>
-        <section class="news-cards" id="seccionOferta">
+        <div class="sliderSection">
+          <div class="sliderSectionContainer">
+            <button aria-label="Anterior" class="sliderAnterior" id="OfertaAnterior"><i class="fa-solid fa-chevron-left"></i></button>
+            <section class="sliderSeccionList" id="seccionOferta">
           
-          <!-- ACA SE INYECTA DINAMICAMENTE DEL ARRAY -->
-
-        </section>
+              <!-- ACA SE INYECTA DINAMICAMENTE DEL ARRAY -->
+    
+            </section>
+            <button aria-label="Siguiente" class="sliderSiguiente" id="OfertaSiguiente"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <div class="sliderIndicadores" id="OfertasIndicadores" role="tablist"></div>
+        </div>
         <hr>
+
         <h2 class="title-sections">Todos los productos</h2>
         <section class="news-cards" id="seccionTodo">
           

@@ -18,6 +18,7 @@ export const renderCategoria = async(id_categoria)=>{
     const seccionOfertas= document.getElementById("seccionOfertas"); //Traemos las sección de la categoría
     const seccionMasVendidos = document.getElementById("seccionMasVendidos"); //Traemos las sección de la categoría
 
+    const tituloTodo = document.getElementById('title-todo')
     const titulo = document.getElementById('title-sections') //Traemos el h2 del tiulo de la sección
     const tituloOfertas = document.getElementById('title-oferta')
     const tituloMasVendido = document.getElementById('title-mas_vendido')
@@ -28,6 +29,7 @@ export const renderCategoria = async(id_categoria)=>{
         seccionOfertas.style.display = "none"
         titulo.style.display = "none"
         tituloOfertas.style.display = "none"
+        tituloTodo.style.display = "none"
 
         linksRedirect.innerHTML += `<a href="">Más vendido</a>`
 
@@ -48,6 +50,7 @@ export const renderCategoria = async(id_categoria)=>{
         seccionMasVendidos.style.display = "none"
         titulo.style.display = "none"
         tituloMasVendido.style.display = "none"
+        tituloTodo.style.display = "none"
 
         linksRedirect.innerHTML += `<a href="">Ofertas</a>`
 
@@ -60,7 +63,6 @@ export const renderCategoria = async(id_categoria)=>{
         data.forEach((producto) => {
             articuloEnHtml = renderArticulo(producto)
             if (producto.oferta) {
-                console.log(producto)
                 seccionOfertas.innerHTML += articuloEnHtml;
             } 
         })

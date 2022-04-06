@@ -27,6 +27,38 @@ function cargarEscuchaDeEventos() {
   })
 }
 
+const createSlider = (sliders)=>{
+
+  sliders.map(slider=>{
+    const {sliderSeccionList, dots, prev, next} = slider
+    new Glider(document.querySelector(sliderSeccionList), {
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      draggable: true,
+      dots,
+      arrows: {
+        prev,
+        next
+      },
+      rewind: true
+    });
+  })
+}
+
 //----------------ZONA DE EJECUCIÓN DE FUNCIONES ---------------
 await renderProductos();
 cargarEscuchaDeEventos()
+createSlider([
+  {
+    sliderSeccionList: "#seccionMasVendido",
+    dots: "#MasVendidosIndicadores",
+    prev: "#MasVendidoAnterior",
+    next: "#MasVendidoSiguiente",
+  },
+  {
+    sliderSeccionList: "#seccionOferta",
+    dots: "#OfertasIndicadores",
+    prev: "#OfertaAnterior",
+    next: "#OfertaSiguiente",
+  },
+])

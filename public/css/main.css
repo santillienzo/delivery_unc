@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.carrousel__lista{
+    overflow: hidden;
+}
+
 .carrousel__anterior,
 .carrousel__siguiente{
     position: absolute;
@@ -43,6 +47,36 @@
     padding: 15px;
 }
 
+.sliderSectionContainer{
+    position: relative;
+}
+
+.sliderAnterior,
+.sliderSiguiente{
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: none;
+    top: calc(50% - 35px);
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.397);
+    color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    left: 15px;
+}   
+.sliderSiguiente{
+    left: auto;
+    right: 15px;
+}
+
+.sliderSeccionList{
+    overflow: hidden;
+}
+
 /* --------------para el Detail---------*/
 .cajaDetail {
     display: flex;
@@ -54,21 +88,21 @@
     padding-bottom: 30px;
 }
 
-.news-cards article {
+.articulo {
 
     padding-left: 15px;
     padding-right: 15px;
 }
 
 
-.news-cards img{
+.articulo img{
     width: 100%;
     height: 180px;
     object-fit: cover;
     border-radius: 5px;
 }
 
-.news-cards h3 {
+.articulo h3 {
     font-size: 20px;
     margin: 10px 0;
 }
@@ -79,10 +113,6 @@
     text-transform: uppercase;
 
     font-weight: bold;
-}
-
-.articulo {
-    padding: 10px;
 }
 
 .footer-card {

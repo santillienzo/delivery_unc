@@ -57,7 +57,7 @@
         "precio": 900,
         "imagen": "./public/img/foto7.jpg",
         "descripcion": "con queso y tomate",
-        "mas_vendido": false,
+        "mas_vendido": true,
         "oferta": false
     },
     {
@@ -77,7 +77,7 @@
         "precio": 1010,
         "imagen": "./public/img/foto9.jpg",
         "descripcion": "con queso y tomate",
-        "mas_vendido": false,
+        "mas_vendido": true,
         "oferta": true
     }
 ]
