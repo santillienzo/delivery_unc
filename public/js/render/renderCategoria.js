@@ -14,6 +14,9 @@ import { renderArticulo } from "../components/renderArticulo.js";
 
 export const renderCategoria = async(id_categoria)=>{
     let articuloEnHtml = " ";
+    const sliderSeccionOfertas = document.getElementById('sliderSeccionOfertas')
+    const sliderSeccionMasVendidos = document.getElementById('sliderSeccionMasVendidos')
+
     const seccionCategoria = document.getElementById("seccionCategoria"); //Traemos las sección de la categoría
     const seccionOfertas= document.getElementById("seccionOfertas"); //Traemos las sección de la categoría
     const seccionMasVendidos = document.getElementById("seccionMasVendidos"); //Traemos las sección de la categoría
@@ -26,7 +29,7 @@ export const renderCategoria = async(id_categoria)=>{
 
     if (id_categoria === "mas_vendido") {
         seccionCategoria.style.display = "none"
-        seccionOfertas.style.display = "none"
+        sliderSeccionOfertas.style.display="none"
         titulo.style.display = "none"
         tituloOfertas.style.display = "none"
         tituloTodo.style.display = "none"
@@ -47,7 +50,7 @@ export const renderCategoria = async(id_categoria)=>{
         })
     }else if(id_categoria === "ofertas"){
         seccionCategoria.style.display = "none"
-        seccionMasVendidos.style.display = "none"
+        sliderSeccionMasVendidos.style.display="none"
         titulo.style.display = "none"
         tituloMasVendido.style.display = "none"
         tituloTodo.style.display = "none"
