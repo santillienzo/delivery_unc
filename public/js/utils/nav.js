@@ -9,18 +9,20 @@ const urlParams = new URLSearchParams(valores);
 let id_categoria = urlParams.get('categoria'); //En que categoría estamos
 
 //Traemos los elementos del html
-const select = document.getElementById('header__select')    //Aquí se almacena el select del nav
+const formSelect = document.querySelector('.header__select span')    //Aquí se almacena el select del nav
+const formCategories = document.querySelector('.header__select ul')  //Aquí se almacena la lista de categorías
+let categoriasActivado = false  //Variable bandera para controlar la apertura de las categorías
 const logo = document.querySelector('.nav-brand')   //Aquí se almacena el logo
 const form = document.querySelector('.header__form')    //Aquí se almacena el formulario
 
 // DECLARACIÓN DE VARIABLES
 //Función para escuchar todos los eventos
 function cargarEscuchaDeEventos(){
-    //Al cambiar el select ejecutamos redirectCategoria()
-    select.addEventListener("change", (e)=> redirectCategoria(e))
+    //Al hacer click en el select:
+    formSelect.addEventListener('click', ()=> openCategories())
+
     //Al hacer click en el logo volvemos al inicio
     logo.addEventListener("click", ()=> window.location.href = `http://${location.host}`)
-
 }
 
 form.addEventListener("submit", (e)=> enviarFormulario(e))
@@ -47,25 +49,33 @@ const enviarFormulario = (e)=>{
 
 //Rellenar select con sus options
 const rellenarSelect=()=>{
-    let optionsHtml = ""    //Aquí se guardará el html    
+    let optionsHtml =`
+    <li><a href="http://${location.host}">Todo</a></li>
+    <li><a href="http://${location.host}/view/categoria.html?categoria=mas_vendido">Más vendido</a></li>
+    <li><a href="http://${location.host}/view/categoria.html?categoria=ofertas">Ofertas</a></li>
+    `   //Aquí se guardará el html    
 
     //Recorremos las categorías y rellenamos dinámicamente el select con los options
     categorias.map(categoria=>{
 
-        optionsHtml = `
-            <option value="${categoria.id}">${categoria.name}</option>
+        optionsHtml += `
+        <li><a href="http://${location.host}/view/categoria.html?categoria=${categoria.id}">${categoria.name}</a></li>
         `
         //Insertamos la opción en el select
-        select.innerHTML += optionsHtml
     })
     
+    formCategories.innerHTML += optionsHtml
 }
 
-//Redirigimos al usuario dependiendo de que categoría haya elegido en el select
-const redirectCategoria = (event)=>{
-
-    let categoria = event.target.value
-    window.location.href = `http://${location.host}/view/categoria.html?categoria=${categoria}`
+const openCategories = ()=>{
+    if (categoriasActivado) {
+        formCategories.style.display = "none"
+        categoriasActivado = false
+    }else{
+        formCategories.style.display = "block"
+        categoriasActivado = true
+        
+    }
 }
 
 //ZONA DE EJECUCIÓN
