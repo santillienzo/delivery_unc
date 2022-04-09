@@ -11,10 +11,10 @@ let id_categoria = urlParams.get('categoria'); //En que categoría estamos
 //Traemos los elementos del html
 const formSelect = document.querySelector('.header__select span')    //Aquí se almacena el select del nav
 const formCategories = document.querySelector('.header__select ul')  //Aquí se almacena la lista de categorías
+const label = document.getElementById('header__checked-label')  //Llamamos al label del checked
 let categoriasActivado = false  //Variable bandera para controlar la apertura de las categorías
 const logo = document.querySelector('.nav-brand')   //Aquí se almacena el logo
 const form = document.querySelector('.header__form')    //Aquí se almacena el formulario
-
 // DECLARACIÓN DE VARIABLES
 //Función para escuchar todos los eventos
 function cargarEscuchaDeEventos(){
@@ -31,19 +31,27 @@ form.addEventListener("submit", (e)=> enviarFormulario(e))
 const enviarFormulario = (e)=>{
     e.preventDefault()
     
-    const busqueda = e.target[1].value; //Que ingresó el usuario
+    const checked = e.target[1].checked     //Verificamos que la opción este checkeada
+    const busqueda = e.target[0].value; //Que ingresó el usuario
+
 
     //Si la busqueda está vacía no hacemos nada
     if (busqueda === "") {
         return
     }
 
-    //Si no estamos posicionados en ningúna categoría enviamos 'all' para que se muestren todos los productos
-    if (id_categoria == null || id_categoria === "all" || id_categoria === "mas_vendido" || id_categoria === "ofertas") {
-        id_categoria = "all"
+    if (checked) {
+        //Si no estamos posicionados en ningúna categoría enviamos 'all' para que se muestren todos los productos
+        if (id_categoria == null || id_categoria === "all" || id_categoria === "mas_vendido" || id_categoria === "ofertas") {
+            id_categoria = "all"
+        }
+    
+        window.location.href = `http://${location.host}/view/search.html?categoria=${id_categoria}&search=${busqueda}`
+    }else{
+        window.location.href = `http://${location.host}/view/search.html?categoria=all&search=${busqueda}`
     }
 
-    window.location.href = `http://${location.host}/view/search.html?categoria=${id_categoria}&search=${busqueda}`
+
     
 }
 
@@ -67,6 +75,18 @@ const rellenarSelect=()=>{
     formCategories.innerHTML += optionsHtml
 }
 
+const cargarLabel = ()=>{
+    if (id_categoria == null || id_categoria === "all" || id_categoria === "mas_vendido" || id_categoria === "ofertas") {
+        label.innerHTML = "Todo"
+    }else{
+        categorias.map(categoria=>{
+            if (id_categoria === categoria.id) {
+                label.innerHTML = categoria.name
+            }
+        })
+    }
+}
+
 const openCategories = ()=>{
     if (categoriasActivado) {
         formCategories.style.display = "none"
@@ -80,4 +100,5 @@ const openCategories = ()=>{
 
 //ZONA DE EJECUCIÓN
 rellenarSelect()
+cargarLabel()
 cargarEscuchaDeEventos()

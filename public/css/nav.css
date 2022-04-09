@@ -78,7 +78,7 @@
 
 .input__search{
     display: inline-block;
-    width: 500px;
+    width: 400px;
     height: 30px;
     font-size: 14px;
     border: solid 1px rgb(197, 191, 191);
@@ -88,6 +88,20 @@
     flex: 1;
     padding-left: 25px;
 }
+
+.header__checked{
+    display: flex;
+    align-items: center;
+    font-size: .9rem;
+    border: solid 1px rgb(197, 191, 191);
+    border-right: none;
+    padding: 0 10px;
+}
+
+.header__checked label{
+    margin-left: 5px;
+}
+
 .header__lupa{
     padding: 5px;
     cursor: pointer;
