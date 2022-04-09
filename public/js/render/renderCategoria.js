@@ -75,7 +75,6 @@ export const renderCategoria = async(id_categoria)=>{
         categorias.map(categoria=>{
             if (categoria.id === id_categoria) {
                 titulo.innerHTML = `Categoría | <span> ${categoria.name}</span>`
-                tituloOfertas.innerHTML = `Ofertas en ${categoria.name}`
                 tituloMasVendido.innerHTML = `${categoria.name} más vendidas`
                 linksRedirect.innerHTML += `<a href="">${categoria.name}</a>`
             }
