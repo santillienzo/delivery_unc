@@ -25,7 +25,10 @@ export function renderCarrito(tbody, carrito, priceTotal, _priceTotal, countCart
     })
 
     priceTotal.innerHTML = _priceTotal
-    countCart.innerHTML = _countCart
+    countCart.forEach(e=>{
+        e.innerHTML = _countCart
+    })
+    // countCart.innerHTML = _countCart
 
     if (carrito.length === 0) {
         return renderCarritoVacio()

@@ -11,7 +11,9 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css
     "
     />
->
+    <!-- GliderJS css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
+
     <!-- Estilos globales -->
     <link rel="stylesheet" href="../public/css/styles.css" />
     <!-- Estilos del main -->
@@ -28,7 +30,7 @@
 
   <body>
     <header class="form-titulo">
-      <nav class="nav-main">
+      <nav class="nav-main-escritorio">
         <img src="../public/img/logo.jpg" alt="milogo" class="nav-brand" />
         <!-- Right Nav -->
         <ul class="nav-main-busqueda">
@@ -59,50 +61,77 @@
         </ul>
         <ul class="nav-main-iconos">
           <li>
-            <a href="./registerAdd.html"><i class="fas fa-user-circle"></i> </a>
+            <a href="../view/registerAdd.html"><i class="fas fa-user-circle"></i> </a>
           </li>
           <li>
             <span class="carrito_contador">0</span>
             <span class="carrito_nav" id="carrito_icon"><i class="fas fa-shopping-cart"></i></span>
           </li>
           <li>
-          <a href="./productoAdd.html"><i class="far fa-calendar-plus"></i> </a> </a>
+          <a href="../view/productoAdd.html"><i class="far fa-calendar-plus"></i> </a> </a>
           </li>
         </ul>
-        <!-- ACA SE INYECTA DINAMICAMENTE carro -->
-        <div class="carrito__container" id="carrito__container">
-          <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
-          <div id="table_container">
-            <table class="table-carrito table-dark table-hover">
-              <caption class="title-cart">Mi carrito</caption>
-              <thead>
-                <tr class="text-primary">
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Precio</th>
-                  <th scope="col">Cantidad</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody class="tbody" id="tbody">
-              </tbody>
-            </table>
-            <div class="total_container">
-              <div class="col">
-                <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
-              </div>
-              <div class="">
-                <button class="btn-salir btn" id="btn_salir_carrito">SALIR</button>
-                <button class="btn-comprar btn">COMPRAR</button>
-              </div>
+        
+      </nav>
+      <nav class="nav-main-responsive">
+        <img src="../public/img/logo.jpg" alt="milogo" class="nav-brand" />
+        <ul class="nav-main-iconos">
+          <li>
+            <span class="carrito_contador">0</span>
+            <span class="carrito_nav" id="carrito_icon"><i class="fas fa-shopping-cart"></i></span>
+          </li>
+          <li class="menu_bars">
+            <i class="fa-solid fa-bars"></i>
+          </li>
+        </ul>
+        <!-- Menu desplegable -->
+        <div class="menu-desplegable-background">
+          <div class="menu-desplegable">
+            <div class="menu-desplegable-cerrar">
+              <i class="fa-solid fa-xmark menu_close"></i>
             </div>
-          </div>
-          <div class="empty_cart" id="empty_cart">
-            <p class="title-cart">Mi carrito</p>
-            <p>Tu carrito está vacio</p>
+            <ul>
+              <li class="menu-desplegable-item"><a href="/">Inicio</a></li>
+              <li class="menu-desplegable-item"><a href="../view/registerAdd.html">Registrar usuario</a></li>
+              <li class="menu-desplegable-item"><a href="../view/productoAdd.html">Añadir producto</a></li>
+            </ul>
           </div>
         </div>
-        <!-- fin carro -->
+        <!-- Cierre Menu desplegable -->
       </nav>
+      <!-- ACA SE INYECTA DINAMICAMENTE carro -->
+      <div class="carrito__container" id="carrito__container">
+        <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
+        <div id="table_container">
+          <table class="table-carrito table-dark table-hover">
+            <caption class="title-cart">Mi carrito</caption>
+            <thead>
+              <tr class="text-primary">
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="tbody" id="tbody">
+            </tbody>
+          </table>
+          <div class="total_container">
+            <div class="col">
+              <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
+            </div>
+            <div class="">
+              <button class="btn-salir btn" id="btn_salir_carrito">SALIR</button>
+              <button class="btn-comprar btn">COMPRAR</button>
+            </div>
+          </div>
+        </div>
+        <div class="empty_cart" id="empty_cart">
+          <p class="title-cart">Mi carrito</p>
+          <p>Tu carrito está vacio</p>
+        </div>
+      </div>
+      <!-- fin carro -->
     </header>
 
     <main class="container">
@@ -184,7 +213,7 @@
     </main>
 
     <footer class="main-footer">
-      <div class="container">
+      <div class="container container-footer-escritorio">
         <section class="section-footer">
           <article class="footer-data">
             <i class="fas fa-credit-card"></i>
@@ -193,7 +222,7 @@
               Info
             </p>
           </article>
-  
+
           <article class="footer-data">
             <i class="fas fa-gift"></i>
             <h2>Envío gratis desde $ 1.999</h2>
@@ -201,7 +230,7 @@
                 Acá   Info
             </p>
           </article>
-  
+
           <article class="footer-data">
             <i class="fas fa-user-shield"></i>
             <h2>Seguridad, de principio a fin</h2>
@@ -211,6 +240,35 @@
           </article>
         </section>
       </div>
+      <div class="container container-footer-responsive">
+        <div class="footer-carrousel_lista">
+          <article class="footer-data">
+            <i class="fas fa-credit-card"></i>
+            <h2>Pagá con tarjeta o en efectivo</h2>
+            <p>
+              Info
+            </p>
+          </article>
+
+          <article class="footer-data">
+            <i class="fas fa-gift"></i>
+            <h2>Envío gratis desde $ 1.999</h2>
+            <p>
+                Acá   Info
+            </p>
+          </article>
+
+          <article class="footer-data">
+            <i class="fas fa-user-shield"></i>
+            <h2>Seguridad, de principio a fin</h2>
+            <p>
+                Acá   Info
+            </p>
+          </article>
+        </div>
+        <div class="footer-indicadores" role="tablist"></div>
+
+      </div>
     </footer>
     <div class="sub-footer">
         <p>Copyright © 2022 Cortez</p>
@@ -218,8 +276,11 @@
 
     <script type="module" src="../public/js/utils/nav.js"></script>
     <script type="module" src="../public/js/utils/cart.js"></script>
+    <script type="module" src="../public/js/utils/footer.js"></script>
+    <script src="../public/js/productoValidator.js"></script>
     <!-- Librería FontAwesome -->
     <script src="https://kit.fontawesome.com/af9ea1f796.js" crossorigin="anonymous"></script>
-    <script src="../public/js/productoValidator.js"></script>
+    <!-- Librería GliderJS -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
   </body>
 </html>

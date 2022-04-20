@@ -71,39 +71,7 @@
           <a href="./view/productoAdd.html"><i class="far fa-calendar-plus"></i> </a> </a>
           </li>
         </ul>
-        <!-- ACA SE INYECTA DINAMICAMENTE carro -->
-        <div class="carrito__container" id="carrito__container">
-          <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
-          <div id="table_container">
-            <table class="table-carrito table-dark table-hover">
-              <caption class="title-cart">Mi carrito</caption>
-              <thead>
-                <tr class="text-primary">
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Precio</th>
-                  <th scope="col">Cantidad</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody class="tbody" id="tbody">
-              </tbody>
-            </table>
-            <div class="total_container">
-              <div class="col">
-                <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
-              </div>
-              <div class="">
-                <button class="btn-salir btn" id="btn_salir_carrito">SALIR</button>
-                <button class="btn-comprar btn">COMPRAR</button>
-              </div>
-            </div>
-          </div>
-          <div class="empty_cart" id="empty_cart">
-            <p class="title-cart">Mi carrito</p>
-            <p>Tu carrito está vacio</p>
-          </div>
-        </div>
-        <!-- fin carro -->
+        
       </nav>
       <nav class="nav-main-responsive">
         <img src="./public/img/logo.jpg" alt="milogo" class="nav-brand" />
@@ -116,18 +84,54 @@
             <i class="fa-solid fa-bars"></i>
           </li>
         </ul>
+        <!-- Menu desplegable -->
         <div class="menu-desplegable-background">
           <div class="menu-desplegable">
             <div class="menu-desplegable-cerrar">
               <i class="fa-solid fa-xmark menu_close"></i>
             </div>
             <ul>
-              <li class="menu-desplegable-item"><a href="">Registrar usuario</a></li>
-              <li class="menu-desplegable-item"><a href="">Añadir producto</a></li>
+              <li class="menu-desplegable-item"><a href="/">Inicio</a></li>
+              <li class="menu-desplegable-item"><a href="./view/registerAdd.html">Registrar usuario</a></li>
+              <li class="menu-desplegable-item"><a href="./view/productoAdd.html">Añadir producto</a></li>
             </ul>
           </div>
         </div>
+        <!-- Cierre Menu desplegable -->
       </nav>
+      <!-- ACA SE INYECTA DINAMICAMENTE carro -->
+      <div class="carrito__container" id="carrito__container">
+        <div class="close" id="close"><i class="fa-solid fa-xmark"></i></div>
+        <div id="table_container">
+          <table class="table-carrito table-dark table-hover">
+            <caption class="title-cart">Mi carrito</caption>
+            <thead>
+              <tr class="text-primary">
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="tbody" id="tbody">
+            </tbody>
+          </table>
+          <div class="total_container">
+            <div class="col">
+              <h3 class="itemCartTotal text-white">Total: $ <span>0</span></h3>
+            </div>
+            <div class="">
+              <button class="btn-salir btn" id="btn_salir_carrito">SALIR</button>
+              <button class="btn-comprar btn">COMPRAR</button>
+            </div>
+          </div>
+        </div>
+        <div class="empty_cart" id="empty_cart">
+          <p class="title-cart">Mi carrito</p>
+          <p>Tu carrito está vacio</p>
+        </div>
+      </div>
+      <!-- fin carro -->
     </header>
     
     <div class="container">

@@ -11,14 +11,16 @@
 import { renderCarrito, renderCarritoVacio } from "../render/renderCarrito.js"
 
 // Atrapo el ícono del carrito y el carrito en sí
-const carrito_icono = document.getElementById('carrito_icon')
+const carrito_icono = document.querySelectorAll('.carrito_nav')
 const carrito_container = document.getElementById('carrito__container')
 const close_icono = document.getElementById('close')
 const btn_salir_carrito = document.getElementById('btn_salir_carrito')
 
+
 //Atrapamos los elementos del html
 const priceTotal = document.querySelector('.itemCartTotal span') //Precio total del carritos
-const countCart = document.querySelector('.carrito_contador') //contador de productos
+const countCart = document.querySelectorAll('.carrito_contador') //contador de productos
+
 
 //Definimos las variables
 let carrito = []; //Array donde se guardarán los productos del carrito
@@ -31,14 +33,16 @@ let carrito_visible = false
 //Declaramos variables (atrapamos elementos html)
 const tbody = document.getElementById("tbody"); //tbody
 
-//Al hacer click en en el ícono del carrito:
-carrito_icono.addEventListener("click", ()=> activarCarrito())
-//Al hacer click en el ícono de cerrar:
-close_icono.addEventListener("click", ()=> activarCarrito())
-btn_salir_carrito.addEventListener("click", ()=> activarCarrito())
 
 // ZONA DE DEFINICIÓN DE FUNCIONES
 function cargarEscuchaDeEventos() {
+    //Al hacer click en alguno de los ícono del carrito:
+    carrito_icono.forEach(icon=>{
+        icon.addEventListener("click", ()=> activarCarrito())
+    })
+    //Al hacer click en el ícono de cerrar:
+    close_icono.addEventListener("click", ()=> activarCarrito())
+    btn_salir_carrito.addEventListener("click", ()=> activarCarrito())
     //Al hacer click en la tabla del carrito ejecutamos la función eliminarProducto()
     tbody.addEventListener("click", e => eliminarProducto(e))
     
