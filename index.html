@@ -30,7 +30,7 @@
 
   <body>
     <header class="form-titulo">
-      <nav class="nav-main">
+      <nav class="nav-main-escritorio">
         <img src="./public/img/logo.jpg" alt="milogo" class="nav-brand" />
         <!-- Right Nav -->
         <ul class="nav-main-busqueda">
@@ -105,7 +105,31 @@
         </div>
         <!-- fin carro -->
       </nav>
+      <nav class="nav-main-responsive">
+        <img src="./public/img/logo.jpg" alt="milogo" class="nav-brand" />
+        <ul class="nav-main-iconos">
+          <li>
+            <span class="carrito_contador">0</span>
+            <span class="carrito_nav" id="carrito_icon"><i class="fas fa-shopping-cart"></i></span>
+          </li>
+          <li class="menu_bars">
+            <i class="fa-solid fa-bars"></i>
+          </li>
+        </ul>
+        <div class="menu-desplegable-background">
+          <div class="menu-desplegable">
+            <div class="menu-desplegable-cerrar">
+              <i class="fa-solid fa-xmark menu_close"></i>
+            </div>
+            <ul>
+              <li class="menu-desplegable-item"><a href="">Registrar usuario</a></li>
+              <li class="menu-desplegable-item"><a href="">Añadir producto</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </header>
+    
     <div class="container">
       <!-- Aquí se renderizará el carrousel -->
       <div class="carrousel">
@@ -172,46 +196,77 @@
     
     
 
-  <footer class="main-footer">
-    <div class="container">
-      <section class="section-footer">
-        <article class="footer-data">
-          <i class="fas fa-credit-card"></i>
-          <h2>Pagá con tarjeta o en efectivo</h2>
-          <p>
-            Info
-          </p>
-        </article>
+    <footer class="main-footer">
+      <div class="container container-footer-escritorio">
+        <section class="section-footer">
+          <article class="footer-data">
+            <i class="fas fa-credit-card"></i>
+            <h2>Pagá con tarjeta o en efectivo</h2>
+            <p>
+              Info
+            </p>
+          </article>
 
-        <article class="footer-data">
-          <i class="fas fa-gift"></i>
-          <h2>Envío gratis desde $ 1.999</h2>
-          <p>
-              Acá   Info
-          </p>
-        </article>
+          <article class="footer-data">
+            <i class="fas fa-gift"></i>
+            <h2>Envío gratis desde $ 1.999</h2>
+            <p>
+                Acá   Info
+            </p>
+          </article>
 
-        <article class="footer-data">
-          <i class="fas fa-user-shield"></i>
-          <h2>Seguridad, de principio a fin</h2>
-          <p>
-              Acá   Info
-          </p>
-        </article>
-      </section>
+          <article class="footer-data">
+            <i class="fas fa-user-shield"></i>
+            <h2>Seguridad, de principio a fin</h2>
+            <p>
+                Acá   Info
+            </p>
+          </article>
+        </section>
+      </div>
+      <div class="container container-footer-responsive">
+        <div class="footer-carrousel_lista">
+          <article class="footer-data">
+            <i class="fas fa-credit-card"></i>
+            <h2>Pagá con tarjeta o en efectivo</h2>
+            <p>
+              Info
+            </p>
+          </article>
+
+          <article class="footer-data">
+            <i class="fas fa-gift"></i>
+            <h2>Envío gratis desde $ 1.999</h2>
+            <p>
+                Acá   Info
+            </p>
+          </article>
+
+          <article class="footer-data">
+            <i class="fas fa-user-shield"></i>
+            <h2>Seguridad, de principio a fin</h2>
+            <p>
+                Acá   Info
+            </p>
+          </article>
+        </div>
+        <div class="footer-indicadores" role="tablist"></div>
+
+      </div>
+    </footer>
+    <div class="sub-footer">
+        <p>Copyright © 2022 Cortez</p>
     </div>
-  </footer>
-  <div class="sub-footer">
-      <p>Copyright © 2022 Cortez</p>
-  </div>
 
   
-  <script type="module" src="./public/js/pages/main.js"></script>
-  <script type="module" src="./public/js/utils/nav.js"></script>
-  <script type="module" src="./public/js/utils/cart.js"></script>
-  <!-- Librería GliderJS -->
-  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
-  <!-- Librería FontAwesome -->
-  <script src="https://kit.fontawesome.com/af9ea1f796.js" crossorigin="anonymous"></script>
+    <script type="module" src="./public/js/pages/main.js"></script>
+    <script type="module" src="./public/js/utils/nav.js"></script>
+    <script type="module" src="./public/js/utils/cart.js"></script>
+    <script type="module" src="./public/js/utils/footer.js"></script>
+
+    <!-- Librería GliderJS -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.js"></script>
+    <!-- Librería FontAwesome -->
+    <script src="https://kit.fontawesome.com/af9ea1f796.js" crossorigin="anonymous"></script>
   </body>
 </html>

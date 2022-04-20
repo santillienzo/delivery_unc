@@ -1,3 +1,7 @@
+.container-footer-responsive{
+    display: none;
+}
+
 .section-footer {
     display: grid;
     background-color: white;
@@ -44,4 +48,28 @@
     margin: 0;
     color: var(--gray);
     padding: 15px 0;
+}
+
+@media (max-width: 850px) {
+    .container-footer-escritorio{
+        display: none ;
+    }
+
+    .container-footer-responsive{
+        display: block;
+    }
+
+    .footer-carrousel_lista::-webkit-scrollbar{
+        display: none;
+    }
+
+    .footer-indicadores .glider-dot{
+        margin-top: 30px;
+        width: 8px;
+        height: 8px;
+    }
+
+    .footer-indicadores .glider-dot.active{
+        background-color: #1259C3;
+    }
 }

@@ -1,4 +1,4 @@
-.nav-main  {
+.nav-main-escritorio  {
     position: fixed;
     top: 0;
     left: 0;
@@ -14,6 +14,9 @@
     width: 100%;
     box-shadow: 0 0 5px 0px #999;
     z-index: 15;
+}
+.nav-main-responsive{
+    display: none;
 }
 
 /* BUSCADOR */
@@ -154,56 +157,70 @@
 
 .nav-main-iconos li{
     margin-left: 15px;
-    position: relative;
+    position: relative; 
 }
 
 @media (max-width: 850px) {
-    .nav-main{
-        max-width: 100%;
+    .nav-main-escritorio{
+        display: none;
+    }
+
+    .nav-main-responsive{
+        display: block;
+        position: fixed;
+        top: 0;
         left: 0;
-        height: 50px;
-    }
-
-    .nav-brand {
-        height: 50px;
-    }
-
-    /* Buscador */
-    .nav-main-busqueda{
-        font-size: 1rem;
+        background-color: #ffffff;
+        /* Sobre escribe los pixels del body*/
+        font-size: 27px;
+        /* Afecta a las clases que abarca, 3 Imagen y las 2 listas*/
         display: flex;
-        justify-content: space-between;
-    }
-    
-    .header__form{
-        display: flex;
+        justify-content:space-between;
+        height: 90px;
+        padding: 20px 0;
+        align-items: center;
         width: 100%;
+        box-shadow: 0 0 5px 0px #999;
+        z-index: 15;
     }
-    
-    .header__select{
-        border: solid 1px rgb(197, 191, 191);
+
+    .menu-desplegable-background{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.212);
+        z-index: 20;
+    }
+
+    .menu-desplegable{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 70%;
+        height: 100vh;
         background-color: #fff;
-        border-radius: 5px 0 0 5px ;
+        box-shadow: 0 0 5px 0px #999;
     }
-    
-    .input__search{
+
+    .menu-desplegable-cerrar{
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        font-size: 27px;
+        padding: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .menu-desplegable-item a{
+        width: 100%;
+        text-align: center;
         display: inline-block;
-        width: 500px;
-        height: 30px;
-        font-size: 14px;
-        border: solid 1px rgb(197, 191, 191);
-        border-left: none;
-        border-right: none;
-        padding: 6px;
-        flex: 1;
-        padding-left: 25px;
-    }
-    .header__lupa{
-        padding: 5px;
-        cursor: pointer;
-        border-radius: 0;
-        border: solid 1px rgb(197, 191, 191);
-        margin: 0;
-        border-radius: 0 5px 5px 0;
+        padding: 15px;
+        font-size: 22px;
+        border-bottom: 1px solid #eee;
     }
 }

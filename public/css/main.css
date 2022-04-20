@@ -14,7 +14,7 @@
     width: 30px;
     height: 30px;
     border: none;
-    top: calc(50% - 35px);
+    top: calc(50% - 15px);
     cursor: pointer;
     line-height: 30px;
     text-align: center;
@@ -58,7 +58,7 @@
     width: 30px;
     height: 30px;
     border: none;
-    top: calc(50% - 35px);
+    top: calc(50% - 15px);
     cursor: pointer;
     line-height: 30px;
     text-align: center;
@@ -137,4 +137,23 @@ i.fa-heart:hover {
     color: rgb(243, 44, 44);
     transition-property: all;
     transition-duration: 200ms;
+}
+
+@media (max-width: 850px) {
+    .carrousel__elemento img{
+        height: 110px;
+        background-color: red;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .news-cards {
+        display: grid;
+        background-color: rgb(241, 247, 247);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-bottom: 10px;
+    }
 }

@@ -15,6 +15,13 @@ const label = document.getElementById('header__checked-label')  //Llamamos al la
 let categoriasActivado = false  //Variable bandera para controlar la apertura de las categorías
 const logo = document.querySelector('.nav-brand')   //Aquí se almacena el logo
 const form = document.querySelector('.header__form')    //Aquí se almacena el formulario
+
+//RESPONSIVE
+const menu_bars = document.querySelector('.menu_bars')
+const menu_close = document.querySelector('.menu_close')
+const menu_desplegable = document.querySelector('.menu-desplegable-background')
+let menuResponsiveActivado = false
+
 // DECLARACIÓN DE VARIABLES
 //Función para escuchar todos los eventos
 function cargarEscuchaDeEventos(){
@@ -23,6 +30,10 @@ function cargarEscuchaDeEventos(){
 
     //Al hacer click en el logo volvemos al inicio
     logo.addEventListener("click", ()=> window.location.href = `http://${location.host}`)
+
+    //Al hacer click en las barras del menu
+    menu_bars.addEventListener("click", ()=> openResponsiveMenu())
+    menu_close.addEventListener("click", ()=> openResponsiveMenu())
 }
 
 form.addEventListener("submit", (e)=> enviarFormulario(e))
@@ -95,6 +106,16 @@ const openCategories = ()=>{
         formCategories.style.display = "block"
         categoriasActivado = true
         
+    }
+}
+
+const openResponsiveMenu = ()=>{
+    if (menuResponsiveActivado) {
+        menu_desplegable.style.display = "none"
+        menuResponsiveActivado = false
+    }else{
+        menu_desplegable.style.display = "block"
+        menuResponsiveActivado = true
     }
 }
 

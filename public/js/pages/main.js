@@ -6,7 +6,7 @@ window.addEventListener('load', function() {
       prev: '.carrousel__anterior',
       next: '.carrousel__siguiente'
     },
-    rewind: true
+    rewind: true,
   })
 })
 
@@ -32,15 +32,25 @@ const createSlider = (sliders)=>{
   sliders.map(slider=>{
     const {sliderSeccionList, dots, prev, next} = slider
     new Glider(document.querySelector(sliderSeccionList), {
-      slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       draggable: true,
       dots,
       arrows: {
         prev,
         next
       },
-      rewind: true
+      rewind: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            
+          }
+        }
+      ]
     });
   })
 }
