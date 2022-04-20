@@ -3,14 +3,14 @@ let errors = {};
 
 
 const formu = document.getElementById("formulario");
-const producto= document.getElementById("producto");
+const producto= document.getElementById("nombreProducto");
 const precio = document.getElementById("precio");
 const categoria = document.getElementById("categoria");
 
-const masVendido = document.getElementById("masVendido");
-const oferta = document.getElementById("oferta")
+const masVendido = document.getElementById("best_seller");
+const oferta = document.getElementById("offer")
 
-const descripcion = document.getElementById("descripcion");
+const descripcion = document.getElementById("descripcionProducto");
 
 // Declaro las Funciones
 
@@ -47,6 +47,7 @@ let precioValidator = () => {
   let feedback = "";
   // Almaceno elemento hermano(<p>) a input nombre, hay un p al final
   let feedbackElement = precio.nextElementSibling;
+  console.log(feedbackElement)
 
   // Si el nombre no valida sobreescribo feedback
   if (precio.value.trim() == "") {
