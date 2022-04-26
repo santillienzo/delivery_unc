@@ -157,8 +157,8 @@
             id="formulario"
           >
             <div class="registerInputImg">
-              <label for="productImg">Seleccionar imagen</label>
-              <img src="../public/img/foto5.jpg" alt="">
+              <label for="productImg" id="productImgLabel">Seleccionar imagen</label>
+              <img src="../public/img/foto5.jpg" alt="alt" id="productImgView">
               <input type="file" name="productImg" id="productImg">
             </div>
             <div class="registerInput">
@@ -289,10 +289,11 @@
         <p>Copyright © 2022 Cortez</p>
     </div>
 
+    <script type="module" src="../public/js/pages/productAdd.js"></script>
     <script type="module" src="../public/js/utils/nav.js"></script>
     <script type="module" src="../public/js/utils/cart.js"></script>
     <script type="module" src="../public/js/utils/footer.js"></script>
-    <script src="../public/js/productoValidator.js"></script>
+    <script src="../public/js/utils/productoValidator.js"></script>
     <!-- Librería FontAwesome -->
     <script src="https://kit.fontawesome.com/af9ea1f796.js" crossorigin="anonymous"></script>
     <!-- Librería GliderJS -->
