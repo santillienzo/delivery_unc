@@ -32,8 +32,8 @@ const createSlider = (sliders)=>{
   sliders.map(slider=>{
     const {sliderSeccionList, dots, prev, next} = slider
     new Glider(document.querySelector(sliderSeccionList), {
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToShow: 2,
+      slidesToScroll: 2,
       draggable: true,
       dots,
       arrows: {

@@ -13,7 +13,7 @@ const formSelect = document.querySelector('.header__select span')    //Aquí se 
 const formCategories = document.querySelector('.header__select ul')  //Aquí se almacena la lista de categorías
 const label = document.getElementById('header__checked-label')  //Llamamos al label del checked
 let categoriasActivado = false  //Variable bandera para controlar la apertura de las categorías
-const logo = document.querySelector('.nav-brand')   //Aquí se almacena el logo
+const logos = document.querySelectorAll('.nav-brand')   //Aquí se almacena el logo
 const forms = document.querySelectorAll('.header__form')    //Aquí se almacena el formulario
 
 //RESPONSIVE
@@ -29,7 +29,9 @@ function cargarEscuchaDeEventos(){
     formSelect.addEventListener('click', ()=> openCategories())
 
     //Al hacer click en el logo volvemos al inicio
-    logo.addEventListener("click", ()=> window.location.href = `http://${location.host}`)
+    logos.forEach(logo=>{
+        logo.addEventListener("click", ()=> window.location.href = `http://${location.host}`)
+    })
 
     //Al hacer click en las barras del menu
     menu_bars.addEventListener("click", ()=> openResponsiveMenu())

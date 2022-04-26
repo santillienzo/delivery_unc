@@ -11,7 +11,7 @@
 }
 
 .product__img-container{
-    width: 60%;
+    width: 50%;
 }
 
 .product__img-container img{
@@ -20,8 +20,10 @@
 }
 
 .product__info-container{
-    width: 40%;
+    width: 50%;
     padding: 0 35px;
+    margin-left: 15px;
+    border-left: 1px solid #ccc;
 }
 
 .product__info-container p{
@@ -66,4 +68,21 @@
     cursor: pointer;
     margin-top: 5px;
     font-size: 1rem;
+}
+
+@media (max-width: 850px) {
+    .product_container{
+        display: block;
+    }
+    
+    .product__img-container{
+        width: 100%;
+    }
+    
+    .product__info-container{
+        width: 100%;
+        padding: 0 5px;
+        margin: 0;
+        border: none;
+    }
 }
