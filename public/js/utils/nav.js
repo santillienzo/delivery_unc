@@ -14,7 +14,7 @@ const formCategories = document.querySelector('.header__select ul')  //Aquí se 
 const label = document.getElementById('header__checked-label')  //Llamamos al label del checked
 let categoriasActivado = false  //Variable bandera para controlar la apertura de las categorías
 const logo = document.querySelector('.nav-brand')   //Aquí se almacena el logo
-const form = document.querySelector('.header__form')    //Aquí se almacena el formulario
+const forms = document.querySelectorAll('.header__form')    //Aquí se almacena el formulario
 
 //RESPONSIVE
 const menu_bars = document.querySelector('.menu_bars')
@@ -34,9 +34,13 @@ function cargarEscuchaDeEventos(){
     //Al hacer click en las barras del menu
     menu_bars.addEventListener("click", ()=> openResponsiveMenu())
     menu_close.addEventListener("click", ()=> openResponsiveMenu())
+
+    //Cargamos las escuchas de ambos formularios (desk & responsive)
+    forms.forEach(form=>{
+        form.addEventListener("submit", (e)=> enviarFormulario(e))
+    })
 }
 
-form.addEventListener("submit", (e)=> enviarFormulario(e))
 
 //Enviamos los parámetros correctos a la url
 const enviarFormulario = (e)=>{

@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="../public/css/main.css" />
     <!-- Estilos del search -->
     <link rel="stylesheet" href="../public/css/search.css">
+    <!-- Estilos footer -->
+    <link rel="stylesheet" href="../public/css/footer.css">
 </head>
 
 <body>
@@ -67,6 +69,18 @@
         </nav>
         <nav class="nav-main-responsive">
             <img src="../public/img/logo.jpg" alt="milogo" class="nav-brand" />
+            <form class="header__form">
+                <input
+                    required
+                    type="text"
+                    name="search"
+                    class="input__search"
+                    placeholder="Buscar productos"
+                />
+                <button type="submit" class="header__lupa">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
             <ul class="nav-main-iconos">
                 <li>
                     <span class="carrito_contador">0</span>
@@ -146,65 +160,65 @@
 
     <footer class="main-footer">
         <div class="container container-footer-escritorio">
-            <section class="section-footer">
-                <article class="footer-data">
-                    <i class="fas fa-credit-card"></i>
-                    <h2>Pagá con tarjeta o en efectivo</h2>
-                    <p>
-                        Info
-                    </p>
-                </article>
-
-                <article class="footer-data">
-                    <i class="fas fa-gift"></i>
-                    <h2>Envío gratis desde $ 1.999</h2>
-                    <p>
-                        Acá Info
-                    </p>
-                </article>
-
-                <article class="footer-data">
-                    <i class="fas fa-user-shield"></i>
-                    <h2>Seguridad, de principio a fin</h2>
-                    <p>
-                        Acá Info
-                    </p>
-                </article>
-            </section>
+          <section class="section-footer">
+            <article class="footer-data">
+              <i class="fas fa-credit-card"></i>
+              <h2>Pagá con tarjeta o en efectivo</h2>
+              <p>
+                Info
+              </p>
+            </article>
+  
+            <article class="footer-data">
+              <i class="fas fa-gift"></i>
+              <h2>Envío gratis desde $ 1.999</h2>
+              <p>
+                  Acá   Info
+              </p>
+            </article>
+  
+            <article class="footer-data">
+              <i class="fas fa-user-shield"></i>
+              <h2>Seguridad, de principio a fin</h2>
+              <p>
+                  Acá   Info
+              </p>
+            </article>
+          </section>
         </div>
         <div class="container container-footer-responsive">
-            <div class="footer-carrousel_lista">
-                <article class="footer-data">
-                    <i class="fas fa-credit-card"></i>
-                    <h2>Pagá con tarjeta o en efectivo</h2>
-                    <p>
-                        Info
-                    </p>
-                </article>
-
-                <article class="footer-data">
-                    <i class="fas fa-gift"></i>
-                    <h2>Envío gratis desde $ 1.999</h2>
-                    <p>
-                        Acá Info
-                    </p>
-                </article>
-
-                <article class="footer-data">
-                    <i class="fas fa-user-shield"></i>
-                    <h2>Seguridad, de principio a fin</h2>
-                    <p>
-                        Acá Info
-                    </p>
-                </article>
-            </div>
-            <div class="footer-indicadores" role="tablist"></div>
-
+          <div class="footer-carrousel_lista">
+            <article class="footer-data">
+              <i class="fas fa-credit-card"></i>
+              <h2>Pagá con tarjeta o en efectivo</h2>
+              <p>
+                Info
+              </p>
+            </article>
+  
+            <article class="footer-data">
+              <i class="fas fa-gift"></i>
+              <h2>Envío gratis desde $ 1.999</h2>
+              <p>
+                  Acá   Info
+              </p>
+            </article>
+  
+            <article class="footer-data">
+              <i class="fas fa-user-shield"></i>
+              <h2>Seguridad, de principio a fin</h2>
+              <p>
+                  Acá   Info
+              </p>
+            </article>
+          </div>
+          <div class="footer-indicadores" role="tablist"></div>
+  
         </div>
-    </footer>
-    <div class="sub-footer">
-        <p>Copyright © 2022 Cortez</p>
-    </div>
+      </footer>
+      <div class="sub-footer">
+          <p>Copyright © 2022 Cortez</p>
+      </div>
 
 
     <script type="module" src="../public/js/utils/nav.js"></script>
